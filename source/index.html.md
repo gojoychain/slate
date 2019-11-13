@@ -123,10 +123,10 @@ This endpoint retrieves all users.
 
 ### Query Parameters
 
-Parameter | Example | Required | Description
---------- | ------- | -------- | -----------
-email | my@email.com | false | Filter users with that email.
-mobile | 123456789 | false | Filter users with that mobile number.
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+email | string | false | Filter users with that email.
+mobile | string | false | Filter users with that mobile number.
 
 ## Get A Specific User
 
@@ -182,9 +182,9 @@ This endpoint retrieves a specific user.
 
 ### URL Parameters
 
-Parameter | Example | Required | Description
---------- | ------- | -------- | -----------
-ID | 1 | true | ID of the user to retrieve.
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | ID of the user to retrieve.
 
 ## Add A User
 
@@ -204,7 +204,98 @@ This endpoint creates a new user.
 
 ### Body Parameters (JSON)
 
-Parameter | Example | Required | Description
---------- | ------- | -------- | -----------
-email | my@email.com | false | New user will be associated with this email.
-mobile | 123456789 | false | New user will be associated with this mobile.
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+email | string | false | Email for this new user.
+mobile | string | false | Mobile number for this new user.
+
+# Wallet
+
+## Get All Wallets
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "wallet": {
+                "id": "1",
+                "chain_id": 8899,
+                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                "created_at": "2019-11-12T08:44:47.000Z"
+            }
+        },
+        {...},
+        {...}
+    ]
+}
+```
+
+This endpoint retrieves all wallets.
+
+### HTTP Request
+
+`GET http://example.com/v1/wallet`
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+address | string | false | Filter wallets with that address (starts with 0x).
+chain_id | int | false | Filter wallets with that chain ID.
+
+## Get A Specific Wallet
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "wallet": {
+                "id": "1",
+                "chain_id": 8899,
+                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                "created_at": "2019-11-12T08:44:47.000Z"
+            }
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific wallet.
+
+### HTTP Request
+
+`GET http://example.com/v1/wallet/<ID>`
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | ID of the wallet to retrieve.
+
+## Add A Wallet
+
+> 200 Response:
+
+```json
+{
+    "data": "Success"
+}
+```
+
+This endpoint creates a new wallet. When a new wallet is created, two balance rows will automatically be created for that new wallet.
+
+### HTTP Request
+
+`POST http://example.com/v1/wallet`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+id | int | true | User ID to assign this new wallet to.
+address | string | true | Address for this new wallet.
+chainId | int | true | Chain ID for this new wallet.
