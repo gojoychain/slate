@@ -20,45 +20,17 @@ search: true
 
 Welcome to the Joy Plus API!
 
-<!-- # Authentication
+# Authentication
 
-> To authorize, use this code:
+**[Register for an API Key](http://example.com/developers)**
 
-```ruby
-require 'kittn'
+API keys are needed to allow access to the authenticated APIs. API keys should be included in all **Authenticated API requests** to the server in a header that looks like the following:
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: MY_API_KEY`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside> -->
+You must replace <code>MY_API_KEY</code> with your personal API key.
+</aside>
 
 # User
 
@@ -396,7 +368,7 @@ This endpoint withdraws JOY from the admin account and deducts the `value` from 
 
 `POST http://example.com/v1/withdraw-joy`
 
-<aside class="notice">
+<aside class="warning">
 Requires authentication
 </aside>
 
