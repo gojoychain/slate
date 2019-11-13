@@ -123,86 +123,88 @@ This endpoint retrieves all users.
 
 ### Query Parameters
 
-Parameter | Example | Description
---------- | ------- | -----------
-email | my@email.com | If set, the result will include users with that email.
-mobile | 123456789 | If set, the result will include users that have that mobile number.
+Parameter | Example | Required | Description
+--------- | ------- | -------- | -----------
+email | my@email.com | false | Filter users with that email.
+mobile | 123456789 | false | Filter users with that mobile number.
 
-## Get a Specific User
+## Get A Specific User
 
 > 200 Response:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "data": [
+        {
+            "balance": [
+                {
+                    "id": "1",
+                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "symbol": "JOY",
+                    "amount": "0.900000000000000000",
+                    "locked_amount": "0.000000000000000000",
+                    "staked_amount": "0.000000000000000000",
+                    "created_at": "2019-11-12T08:44:47.000Z"
+                },
+                {
+                    "id": "2",
+                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "symbol": "JUSD",
+                    "amount": "0.000000000000000000",
+                    "locked_amount": "0.000000000000000000",
+                    "staked_amount": "0.000000000000000000",
+                    "created_at": "2019-11-12T08:44:47.000Z"
+                }
+            ],
+            "user": {
+                "id": "1",
+                "email": "deric@bodhi.network",
+                "mobile": "1",
+                "status": 1,
+                "created_at": "2019-11-12T08:44:41.000Z"
+            },
+            "wallet": {
+                "id": "1",
+                "chain_id": 8899,
+                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                "created_at": "2019-11-12T08:44:47.000Z"
+            }
+        }
+    ]
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/v1/user/<ID>`
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Parameter | Example | Required | Description
+--------- | ------- | -------- | -----------
+ID | 1 | true | ID of the user to retrieve.
 
-## Delete a Specific Kitten
+## Add A User
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> 200 Response:
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+    "data": "Success"
 }
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint creates a new user.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`POST http://example.com/v1/user`
 
-### URL Parameters
+### Body Parameters (JSON)
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+Parameter | Example | Required | Description
+--------- | ------- | -------- | -----------
+email | my@email.com | false | New user will be associated with this email.
+mobile | 123456789 | false | New user will be associated with this mobile.
