@@ -65,103 +65,72 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# User
 
-## Get All Kittens
+## Get All Users
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> 200 Response:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+    "data": [
+        {
+            "balance": [
+                {
+                    "id": "1",
+                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "symbol": "JOY",
+                    "amount": "0.900000000000000000",
+                    "locked_amount": "0.000000000000000000",
+                    "staked_amount": "0.000000000000000000",
+                    "created_at": "2019-11-12T08:44:47.000Z"
+                },
+                {
+                    "id": "2",
+                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "symbol": "JUSD",
+                    "amount": "0.000000000000000000",
+                    "locked_amount": "0.000000000000000000",
+                    "staked_amount": "0.000000000000000000",
+                    "created_at": "2019-11-12T08:44:47.000Z"
+                }
+            ],
+            "user": {
+                "id": "1",
+                "email": "deric@bodhi.network",
+                "mobile": "1",
+                "status": 1,
+                "created_at": "2019-11-12T08:44:41.000Z"
+            },
+            "wallet": {
+                "id": "1",
+                "chain_id": 8899,
+                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                "created_at": "2019-11-12T08:44:47.000Z"
+            }
+        },
+        {...},
+        {...}
+    ]
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/v1/user`
 
 ### Query Parameters
 
-Parameter | Default | Description
+Parameter | Example | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+email | my@email.com | If set, the result will include users with that email.
+mobile | 123456789 | If set, the result will include users that have that mobile number.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+## Get a Specific User
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> 200 Response:
 
 ```json
 {
