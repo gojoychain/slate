@@ -251,7 +251,7 @@ ID | int | true | ID of the wallet to retrieve.
 }
 ```
 
-This endpoint creates a new wallet. When a new wallet is created, two balance rows will automatically be created for that new wallet.
+This endpoint creates a new wallet. When a new wallet is created, two balance rows (`JOY` and `JUSD`) will automatically be created for that new wallet.
 
 ### HTTP Request
 
