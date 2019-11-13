@@ -1,31 +1,26 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+# language_tabs: # must be one of https://git.io/vQNgJ
+#   - shell
+#   - ruby
+#   - python
+#   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - errors
+  # - errors
 
 search: true
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Joy Plus API!
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
-# Authentication
+<!-- # Authentication
 
 > To authorize, use this code:
 
@@ -63,7 +58,7 @@ Kittn expects for the API key to be included in all API requests to the server i
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+</aside> -->
 
 # User
 
@@ -109,7 +104,6 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
                 "created_at": "2019-11-12T08:44:47.000Z"
             }
         },
-        {...},
         {...}
     ]
 }
@@ -226,7 +220,6 @@ mobile | string | false | Mobile number for this new user.
                 "created_at": "2019-11-12T08:44:47.000Z"
             }
         },
-        {...},
         {...}
     ]
 }
@@ -299,3 +292,118 @@ Parameter | Type | Required | Description
 id | int | true | User ID to assign this new wallet to.
 address | string | true | Address for this new wallet.
 chainId | int | true | Chain ID for this new wallet.
+
+# Balance
+
+## Get All Balances
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "balance": {
+                "id": "1",
+                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                "symbol": "JOY",
+                "amount": "0.900000000000000000",
+                "locked_amount": "0.000000000000000000",
+                "staked_amount": "0.000000000000000000",
+                "created_at": "2019-11-12T08:44:47.000Z"
+            }
+        },
+        {
+            "balance": {
+                "id": "2",
+                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                "symbol": "JUSD",
+                "amount": "0.000000000000000000",
+                "locked_amount": "0.000000000000000000",
+                "staked_amount": "0.000000000000000000",
+                "created_at": "2019-11-12T08:44:47.000Z"
+            }
+        },
+        {...}
+    ]
+}
+```
+
+This endpoint retrieves all balances.
+
+### HTTP Request
+
+`GET http://example.com/v1/balance`
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+address | string | false | Filter balances with that address (starts with 0x).
+symbol | string | false | Filter wallets with that symbol. One of: [`JOY`, `JUSD`].
+
+## Get A Specific Balance
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "balance": {
+                "id": "1",
+                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                "symbol": "JOY",
+                "amount": "0.900000000000000000",
+                "locked_amount": "0.000000000000000000",
+                "staked_amount": "0.000000000000000000",
+                "created_at": "2019-11-12T08:44:47.000Z"
+            }
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific wallet.
+
+### HTTP Request
+
+`GET http://example.com/v1/balance/<ID>`
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | ID of the balance to retrieve.
+
+# Action
+
+## Withdraw JOY
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "txid": "0x5e134ef200ba6a87e9d7d5ce049011ca0b8def6acc0a35cbc71df552f6d26d48"
+    }
+}
+```
+
+This endpoint withdraws JOY from the admin account and deducts the `value` from the `from` address.
+
+### HTTP Request
+
+`POST http://example.com/v1/withdraw-joy`
+
+<aside class="notice">
+Requires authentication
+</aside>
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+from | string | true | Address to deduct the JOY from.
+to | string | true | Address to send the JOY to.
+value | string | true | Amount to withdraw. Should be decimal format, e.g. 1 JOY = "1".
