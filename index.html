@@ -219,6 +219,9 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
             <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
               <ul class="toc-list-h2">
                   <li>
@@ -257,6 +260,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#action" class="toc-h1 toc-link" data-title="Action">Action</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#withdraw-joy" class="toc-h2 toc-link" data-title="Withdraw JOY">Withdraw JOY</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
@@ -267,46 +278,16 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Joy Plus API!</p>
+<h1 id='authentication'>Authentication</h1>
+<p><strong><a href="http://example.com/developers">Register for an API Key</a></strong></p>
 
-<!-- # Authentication
+<p>API keys are needed to allow access to the authenticated APIs. API keys should be included in all <strong>Authenticated API requests</strong> to the server in a header that looks like the following:</p>
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+<p><code>Authorization: MY_API_KEY</code></p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside> -->
+You must replace <code>MY_API_KEY</code> with your personal API key.
+</aside>
 <h1 id='user'>User</h1><h2 id='get-all-users'>Get All Users</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -685,6 +666,51 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <td>int</td>
 <td>true</td>
 <td>ID of the balance to retrieve.</td>
+</tr>
+</tbody></table>
+<h1 id='action'>Action</h1><h2 id='withdraw-joy'>Withdraw JOY</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x5e134ef200ba6a87e9d7d5ce049011ca0b8def6acc0a35cbc71df552f6d26d48"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST http://example.com/v1/withdraw-joy</code></p>
+
+<aside class="warning">
+Requires authentication
+</aside>
+<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>true</td>
+<td>Address to deduct the JOY from.</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>true</td>
+<td>Address to send the JOY to.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>true</td>
+<td>Amount to withdraw. Should be decimal format, e.g. 1 JOY = &quot;1&quot;.</td>
 </tr>
 </tbody></table>
 
