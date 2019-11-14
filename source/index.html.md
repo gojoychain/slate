@@ -22,9 +22,9 @@ Welcome to the Joy Plus API!
 
 # Authentication
 
-**[Register for an API Key](http://example.com/developers)**
+**[Register for an API Key](#generate-api-key)**
 
-API keys are needed to allow access to the authenticated APIs. API keys should be included in all **Authenticated API requests** to the server in a header that looks like the following:
+API keys are needed to allow access to the authenticated APIs. API keys should be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: MY_API_KEY`
 
@@ -48,6 +48,8 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 ```
 
 This endpoint creates a new API Key.
+
+**Save your API Key as you will not be able to retrieve it again!**
 
 ### HTTP Request
 
@@ -120,6 +122,12 @@ This endpoint retrieves all users.
 
 `GET http://example.com/v1/user`
 
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -179,6 +187,12 @@ This endpoint retrieves a specific user.
 
 `GET http://example.com/v1/user/<ID>`
 
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
 ### URL Parameters
 
 Parameter | Type | Required | Description
@@ -200,6 +214,12 @@ This endpoint creates a new user.
 ### HTTP Request
 
 `POST http://example.com/v1/user`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
 
 ### Body Parameters (JSON)
 
@@ -236,6 +256,12 @@ This endpoint retrieves all wallets.
 
 `GET http://example.com/v1/wallet`
 
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -268,6 +294,12 @@ This endpoint retrieves a specific wallet.
 
 `GET http://example.com/v1/wallet/<ID>`
 
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
 ### URL Parameters
 
 Parameter | Type | Required | Description
@@ -289,6 +321,12 @@ This endpoint creates a new wallet. When a new wallet is created, two balance ro
 ### HTTP Request
 
 `POST http://example.com/v1/wallet`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
 
 ### Body Parameters (JSON)
 
@@ -340,6 +378,12 @@ This endpoint retrieves all balances.
 
 `GET http://example.com/v1/balance`
 
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -375,6 +419,12 @@ This endpoint retrieves a specific wallet.
 
 `GET http://example.com/v1/balance/<ID>`
 
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
 ### URL Parameters
 
 Parameter | Type | Required | Description
@@ -401,9 +451,11 @@ This endpoint withdraws JOY from the admin account and deducts the `value` from 
 
 `POST http://example.com/v1/withdraw-joy`
 
-<aside class="warning">
-Requires authentication
-</aside>
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
 
 ### Body Parameters (JSON)
 
