@@ -222,6 +222,14 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
+            <a href="#register" class="toc-h1 toc-link" data-title="Register">Register</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#generate-api-key" class="toc-h2 toc-link" data-title="Generate API Key">Generate API Key</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
               <ul class="toc-list-h2">
                   <li>
@@ -279,15 +287,63 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Joy Plus API!</p>
 <h1 id='authentication'>Authentication</h1>
-<p><strong><a href="http://example.com/developers">Register for an API Key</a></strong></p>
+<p><strong><a href="#generate-api-key">Register for an API Key</a></strong></p>
 
-<p>API keys are needed to allow access to the authenticated APIs. API keys should be included in all <strong>Authenticated API requests</strong> to the server in a header that looks like the following:</p>
+<p>API keys are needed to allow access to the authenticated APIs. API keys should be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code>Authorization: MY_API_KEY</code></p>
 
 <aside class="notice">
 You must replace <code>MY_API_KEY</code> with your personal API key.
 </aside>
+<h1 id='register'>Register</h1><h2 id='generate-api-key'>Generate API Key</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-new-api-key"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Save this API Key. It will not be shown again."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new API Key.</p>
+
+<aside class="warning">
+Save your API Key as you will not be able to retrieve it again!
+</aside>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST http://example.com/v1/register</code></p>
+<h3 id='headers'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires Admin Key.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters-json'>Body Parameters (JSON)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>true</td>
+<td>Email to register the API Key with.</td>
+</tr>
+</tbody></table>
 <h1 id='user'>User</h1><h2 id='get-all-users'>Get All Users</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -334,8 +390,22 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all users.</p>
-<h3 id='http-request'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/user</code></p>
+<h3 id='headers-2'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -403,8 +473,22 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/user/&lt;ID&gt;</code></p>
+<h3 id='headers-3'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -430,9 +514,23 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new user.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/user</code></p>
-<h3 id='body-parameters-json'>Body Parameters (JSON)</h3>
+<h3 id='headers-4'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -473,8 +571,22 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all wallets.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/wallet</code></p>
+<h3 id='headers-5'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -515,8 +627,22 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific wallet.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/wallet/&lt;ID&gt;</code></p>
+<h3 id='headers-6'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -542,9 +668,23 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new wallet. When a new wallet is created, two balance rows (<code>JOY</code> and <code>JUSD</code>) will automatically be created for that new wallet.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/wallet</code></p>
-<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
+<h3 id='headers-7'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -605,8 +745,22 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all balances.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/balance</code></p>
+<h3 id='headers-8'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -650,8 +804,22 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific wallet.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/balance/&lt;ID&gt;</code></p>
+<h3 id='headers-9'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -679,13 +847,23 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/withdraw-joy</code></p>
-
-<aside class="warning">
-Requires authentication
-</aside>
-<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
+<h3 id='headers-10'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
