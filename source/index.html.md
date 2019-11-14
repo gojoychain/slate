@@ -32,6 +32,39 @@ API keys are needed to allow access to the authenticated APIs. API keys should b
 You must replace <code>MY_API_KEY</code> with your personal API key.
 </aside>
 
+# Register
+
+## Generate API Key
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "api_key": "your-new-api-key",
+        "message": "Save this API Key. It will not be shown again."
+    }
+}
+```
+
+This endpoint creates a new API Key.
+
+### HTTP Request
+
+`POST http://example.com/v1/register`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires Admin Key.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+email | string | true | Email to register the API Key with.
+
 # User
 
 ## Get All Users
