@@ -49,7 +49,9 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 
 This endpoint creates a new API Key.
 
-**Save your API Key as you will not be able to retrieve it again!**
+<aside class="warning">
+Save your API Key as you will not be able to retrieve it again!
+</aside>
 
 ### HTTP Request
 
