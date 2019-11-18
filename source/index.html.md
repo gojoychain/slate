@@ -24,7 +24,7 @@ Welcome to the Joy Plus API!
 
 **[Register for an API Key](#generate-api-key)**
 
-API keys are needed to allow access to the authenticated APIs. API keys should be included in all API requests to the server in a header that looks like the following:
+An API key is needed to allow access to the APIs. API keys should be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: MY_API_KEY`
 
@@ -97,7 +97,7 @@ Authorization | true | Requires API Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 code | string | true | Code supplied by Passport API.
-open_id | string | true | User's OpenID.
+open_id | string | true | User's OpenID supplied by Passport API.
 
 # User
 
