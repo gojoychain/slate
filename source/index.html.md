@@ -32,7 +32,7 @@ API keys are needed to allow access to the authenticated APIs. API keys should b
 You must replace <code>MY_API_KEY</code> with your personal API key.
 </aside>
 
-# Register
+# Auth
 
 ## Generate API Key
 
@@ -68,6 +68,36 @@ Authorization | true | Requires Admin Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 email | string | true | Email to register the API Key with.
+
+## Login
+
+> 200 Response:
+
+```json
+{
+    "data": {
+    }
+}
+```
+
+This endpoint authenticates a user's OpenID against the Passport API.
+
+### HTTP Request
+
+`POST http://example.com/v1/login`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+code | string | true | Code supplied by Passport API.
+open_id | string | true | User's OpenID.
 
 # User
 
