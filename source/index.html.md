@@ -366,7 +366,7 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 id | int | true | User ID to assign this new wallet to.
 address | string | true | Address for this new wallet.
-chainId | int | true | Chain ID for this new wallet.
+chain_id | int | true | Chain ID for this new wallet.
 
 # Balance
 
