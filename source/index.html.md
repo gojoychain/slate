@@ -75,12 +75,50 @@ email | string | true | Email to register the API Key with.
 
 ```json
 {
-    "data": {
-    }
+    "data": [
+        {
+            "balance": [
+                {
+                    "id": "1",
+                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+                    "symbol": "JOY",
+                    "amount": "0.000000000000000000",
+                    "locked_amount": "0.000000000000000000",
+                    "staked_amount": "0.000000000000000000",
+                    "created_at": "2019-11-20T11:40:42.000Z"
+                },
+                {
+                    "id": "2",
+                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+                    "symbol": "JUSD",
+                    "amount": "0.000000000000000000",
+                    "locked_amount": "0.000000000000000000",
+                    "staked_amount": "0.000000000000000000",
+                    "created_at": "2019-11-20T11:40:42.000Z"
+                }
+            ],
+            "user": {
+                "id": "1000000000",
+                "openid": "abcdefghijklmnopqrstuvwxyz",
+                "first_name": "John",
+                "last_name": "Doe",
+                "email": "john.doe@gmail.com",
+                "mobile": "1234567890",
+                "status": 1,
+                "created_at": "2019-11-20T11:40:42.000Z"
+            },
+            "wallet": {
+                "id": "1000000000",
+                "chain_id": 8899,
+                "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+                "created_at": "2019-11-20T11:40:42.000Z"
+            }
+        }
+    ]
 }
 ```
 
-This endpoint authenticates a user's OpenID against the Passport API.
+This endpoint authenticates with the Passport API and returns user info.
 
 ### HTTP Request
 
@@ -97,7 +135,6 @@ Authorization | true | Requires API Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 code | string | true | Code supplied by Passport API.
-open_id | string | true | User's OpenID supplied by Passport API.
 
 # User
 
