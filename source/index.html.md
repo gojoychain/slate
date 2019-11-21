@@ -41,7 +41,7 @@ You must replace <code>MY_API_KEY</code> with your personal API key.
 ```json
 {
     "data": {
-        "api_key": "your-new-api-key",
+        "apiKey": "your-new-api-key",
         "message": "Save this API Key. It will not be shown again."
     }
 }
