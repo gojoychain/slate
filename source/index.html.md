@@ -268,35 +268,6 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 ID | int | true | ID of the user to retrieve.
 
-## Add A User
-
-> 200 Response:
-
-```json
-{
-    "data": "Success"
-}
-```
-
-This endpoint creates a new user.
-
-### HTTP Request
-
-`POST http://example.com/v1/user`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
-### Body Parameters (JSON)
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-email | string | false | Email for this new user.
-mobile | string | false | Mobile number for this new user.
-
 # Wallet
 
 ## Get All Wallets
@@ -374,36 +345,6 @@ Authorization | true | Requires API Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 ID | int | true | ID of the wallet to retrieve.
-
-## Add A Wallet
-
-> 200 Response:
-
-```json
-{
-    "data": "Success"
-}
-```
-
-This endpoint creates a new wallet. When a new wallet is created, two balance rows (`JOY` and `JUSD`) will automatically be created for that new wallet.
-
-### HTTP Request
-
-`POST http://example.com/v1/wallet`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
-### Body Parameters (JSON)
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-id | int | true | User ID to assign this new wallet to.
-address | string | true | Address for this new wallet.
-chain_id | int | true | Chain ID for this new wallet.
 
 # Balance
 
