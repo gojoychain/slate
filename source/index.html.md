@@ -80,38 +80,37 @@ email | string | true | Email to register the API Key with.
             "balance": [
                 {
                     "id": "1",
-                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+                    "address": "0x0000000000000000000000000000000000000000",
                     "symbol": "JOY",
                     "amount": "0.000000000000000000",
-                    "locked_amount": "0.000000000000000000",
-                    "staked_amount": "0.000000000000000000",
-                    "created_at": "2019-11-20T11:40:42.000Z"
+                    "lockedAmount": "0.000000000000000000",
+                    "stakedAmount": "0.000000000000000000",
+                    "createdAt": 1574316887000
                 },
                 {
                     "id": "2",
-                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+                    "address": "0x0000000000000000000000000000000000000000",
                     "symbol": "JUSD",
                     "amount": "0.000000000000000000",
-                    "locked_amount": "0.000000000000000000",
-                    "staked_amount": "0.000000000000000000",
-                    "created_at": "2019-11-20T11:40:42.000Z"
+                    "lockedAmount": "0.000000000000000000",
+                    "stakedAmount": "0.000000000000000000",
+                    "createdAt": 1574316887000
                 }
             ],
             "user": {
                 "id": "1000000000",
-                "openid": "abcdefghijklmnopqrstuvwxyz",
-                "first_name": "John",
-                "last_name": "Doe",
+                "openID": "abcdefghijklmnopqrstuvwxyz=",
+                "firstName": "John",
+                "lastName": "Doe",
                 "email": "john.doe@gmail.com",
                 "mobile": "1234567890",
                 "status": 1,
-                "created_at": "2019-11-20T11:40:42.000Z"
+                "createdAt": 1574316887000
             },
             "wallet": {
                 "id": "1000000000",
-                "chain_id": 8899,
-                "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-                "created_at": "2019-11-20T11:40:42.000Z"
+                "address": "0x0000000000000000000000000000000000000000",
+                "createdAt": 1574316887000
             }
         }
     ]
@@ -149,35 +148,37 @@ code | string | true | Code supplied by Passport API.
             "balance": [
                 {
                     "id": "1",
-                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "address": "0x0000000000000000000000000000000000000000",
                     "symbol": "JOY",
-                    "amount": "0.900000000000000000",
-                    "locked_amount": "0.000000000000000000",
-                    "staked_amount": "0.000000000000000000",
-                    "created_at": "2019-11-12T08:44:47.000Z"
+                    "amount": "0.000000000000000000",
+                    "lockedAmount": "0.000000000000000000",
+                    "stakedAmount": "0.000000000000000000",
+                    "createdAt": 1574316887000
                 },
                 {
                     "id": "2",
-                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "address": "0x0000000000000000000000000000000000000000",
                     "symbol": "JUSD",
                     "amount": "0.000000000000000000",
-                    "locked_amount": "0.000000000000000000",
-                    "staked_amount": "0.000000000000000000",
-                    "created_at": "2019-11-12T08:44:47.000Z"
+                    "lockedAmount": "0.000000000000000000",
+                    "stakedAmount": "0.000000000000000000",
+                    "createdAt": 1574316887000
                 }
             ],
             "user": {
-                "id": "1",
-                "email": "deric@bodhi.network",
-                "mobile": "1",
+                "id": "1000000000",
+                "openID": "abcdefghijklmnopqrstuvwxyz=",
+                "firstName": "John",
+                "lastName": "Doe",
+                "email": "john.doe@gmail.com",
+                "mobile": "1234567890",
                 "status": 1,
-                "created_at": "2019-11-12T08:44:41.000Z"
+                "createdAt": 1574316887000
             },
             "wallet": {
-                "id": "1",
-                "chain_id": 8899,
-                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
-                "created_at": "2019-11-12T08:44:47.000Z"
+                "id": "1000000000",
+                "address": "0x0000000000000000000000000000000000000000",
+                "createdAt": 1574316887000
             }
         },
         {...}
@@ -201,6 +202,9 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
+openid | string | false | Filter users with that OpenID.
+first_name | string | false | Filter users with that first name.
+last_name | string | false | Filter users with that last name.
 email | string | false | Filter users with that email.
 mobile | string | false | Filter users with that mobile number.
 
@@ -215,35 +219,37 @@ mobile | string | false | Filter users with that mobile number.
             "balance": [
                 {
                     "id": "1",
-                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "address": "0x0000000000000000000000000000000000000000",
                     "symbol": "JOY",
-                    "amount": "0.900000000000000000",
-                    "locked_amount": "0.000000000000000000",
-                    "staked_amount": "0.000000000000000000",
-                    "created_at": "2019-11-12T08:44:47.000Z"
+                    "amount": "0.000000000000000000",
+                    "lockedAmount": "0.000000000000000000",
+                    "stakedAmount": "0.000000000000000000",
+                    "createdAt": 1574316887000
                 },
                 {
                     "id": "2",
-                    "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+                    "address": "0x0000000000000000000000000000000000000000",
                     "symbol": "JUSD",
                     "amount": "0.000000000000000000",
-                    "locked_amount": "0.000000000000000000",
-                    "staked_amount": "0.000000000000000000",
-                    "created_at": "2019-11-12T08:44:47.000Z"
+                    "lockedAmount": "0.000000000000000000",
+                    "stakedAmount": "0.000000000000000000",
+                    "createdAt": 1574316887000
                 }
             ],
             "user": {
-                "id": "1",
-                "email": "deric@bodhi.network",
-                "mobile": "1",
+                "id": "1000000000",
+                "openID": "abcdefghijklmnopqrstuvwxyz=",
+                "firstName": "John",
+                "lastName": "Doe",
+                "email": "john.doe@gmail.com",
+                "mobile": "1234567890",
                 "status": 1,
-                "created_at": "2019-11-12T08:44:41.000Z"
+                "createdAt": 1574316887000
             },
             "wallet": {
-                "id": "1",
-                "chain_id": 8899,
-                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
-                "created_at": "2019-11-12T08:44:47.000Z"
+                "id": "1000000000",
+                "address": "0x0000000000000000000000000000000000000000",
+                "createdAt": 1574316887000
             }
         }
     ]
@@ -278,12 +284,9 @@ ID | int | true | ID of the user to retrieve.
 {
     "data": [
         {
-            "wallet": {
-                "id": "1",
-                "chain_id": 8899,
-                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
-                "created_at": "2019-11-12T08:44:47.000Z"
-            }
+            "id": "1000000000",
+            "address": "0x0000000000000000000000000000000000000000",
+            "createdAt": 1574316887000
         },
         {...}
     ]
@@ -307,7 +310,6 @@ Authorization | true | Requires API Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 address | string | false | Filter wallets with that address (starts with 0x).
-chain_id | int | false | Filter wallets with that chain ID.
 
 ## Get A Specific Wallet
 
@@ -317,12 +319,9 @@ chain_id | int | false | Filter wallets with that chain ID.
 {
     "data": [
         {
-            "wallet": {
-                "id": "1",
-                "chain_id": 8899,
-                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
-                "created_at": "2019-11-12T08:44:47.000Z"
-            }
+            "id": "1000000000",
+            "address": "0x0000000000000000000000000000000000000000",
+            "createdAt": 1574316887000
         }
     ]
 }
@@ -356,26 +355,22 @@ ID | int | true | ID of the wallet to retrieve.
 {
     "data": [
         {
-            "balance": {
-                "id": "1",
-                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
-                "symbol": "JOY",
-                "amount": "0.900000000000000000",
-                "locked_amount": "0.000000000000000000",
-                "staked_amount": "0.000000000000000000",
-                "created_at": "2019-11-12T08:44:47.000Z"
-            }
+            "id": "1",
+            "address": "0x0000000000000000000000000000000000000000",
+            "symbol": "JOY",
+            "amount": "0.000000000000000000",
+            "lockedAmount": "0.000000000000000000",
+            "stakedAmount": "0.000000000000000000",
+            "createdAt": 1574316887000
         },
         {
-            "balance": {
-                "id": "2",
-                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
-                "symbol": "JUSD",
-                "amount": "0.000000000000000000",
-                "locked_amount": "0.000000000000000000",
-                "staked_amount": "0.000000000000000000",
-                "created_at": "2019-11-12T08:44:47.000Z"
-            }
+            "id": "2",
+            "address": "0x0000000000000000000000000000000000000000",
+            "symbol": "JUSD",
+            "amount": "0.000000000000000000",
+            "lockedAmount": "0.000000000000000000",
+            "stakedAmount": "0.000000000000000000",
+            "createdAt": 1574316887000
         },
         {...}
     ]
@@ -409,15 +404,13 @@ symbol | string | false | Filter wallets with that symbol. One of: [`JOY`, `JUSD
 {
     "data": [
         {
-            "balance": {
-                "id": "1",
-                "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
-                "symbol": "JOY",
-                "amount": "0.900000000000000000",
-                "locked_amount": "0.000000000000000000",
-                "staked_amount": "0.000000000000000000",
-                "created_at": "2019-11-12T08:44:47.000Z"
-            }
+            "id": "1",
+            "address": "0x0000000000000000000000000000000000000000",
+            "symbol": "JOY",
+            "amount": "0.000000000000000000",
+            "lockedAmount": "0.000000000000000000",
+            "stakedAmount": "0.000000000000000000",
+            "createdAt": 1574316887000
         }
     ]
 }
