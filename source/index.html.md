@@ -202,11 +202,11 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-openid | string | false | Filter users with that OpenID.
-first_name | string | false | Filter users with that first name.
-last_name | string | false | Filter users with that last name.
-email | string | false | Filter users with that email.
-mobile | string | false | Filter users with that mobile number.
+openid | string | false | Filter by OpenID.
+first_name | string | false | Filter by first name.
+last_name | string | false | Filter by last name.
+email | string | false | Filter by email.
+mobile | string | false | Filter by mobile number.
 
 ## Get A Specific User
 
@@ -309,7 +309,7 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-address | string | false | Filter wallets with that address (starts with 0x).
+address | string | false | Filter by address (starts with 0x).
 
 ## Get A Specific Wallet
 
@@ -393,8 +393,8 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-address | string | false | Filter balances with that address (starts with 0x).
-symbol | string | false | Filter wallets with that symbol. One of: [`JOY`, `JUSD`].
+address | string | false | Filter by address (starts with 0x).
+symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
 
 ## Get A Specific Balance
 
@@ -416,7 +416,7 @@ symbol | string | false | Filter wallets with that symbol. One of: [`JOY`, `JUSD
 }
 ```
 
-This endpoint retrieves a specific wallet.
+This endpoint retrieves a specific balance.
 
 ### HTTP Request
 
@@ -433,6 +433,170 @@ Authorization | true | Requires API Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 ID | int | true | ID of the balance to retrieve.
+
+# Deposit
+
+## Get All Deposits
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "txid": "0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5",
+            "fromAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
+            "toAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+            "symbol": "JOY",
+            "depositAmount": "1.000000000000000000",
+            "createdAt": 1574408118000
+        },
+        {...}
+    ]
+}
+```
+
+This endpoint retrieves all deposits.
+
+### HTTP Request
+
+`GET http://example.com/v1/deposit`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+txid | string | false | Filter by txid (starts with 0x).
+from_address | string | false | Filter by from address (starts with 0x).
+to_address | string | false | Filter by to address (starts with 0x).
+symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
+
+## Get A Specific Deposit
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "txid": "0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5",
+            "fromAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
+            "toAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+            "symbol": "JOY",
+            "depositAmount": "1.000000000000000000",
+            "createdAt": 1574408118000
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific deposit.
+
+### HTTP Request
+
+`GET http://example.com/v1/deposit/<ID>`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | ID of the deposit to retrieve.
+
+# Withdraw
+
+## Get All Withdraws
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "txid": "0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5",
+            "fromAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+            "toAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
+            "symbol": "JOY",
+            "withdrawAmount": "2.000000000000000000",
+            "createdAt": 1574408211000
+        },
+        {...}
+    ]
+}
+```
+
+This endpoint retrieves all withdraws.
+
+### HTTP Request
+
+`GET http://example.com/v1/withdraw`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+txid | string | false | Filter by txid (starts with 0x).
+from_address | string | false | Filter by from address (starts with 0x).
+to_address | string | false | Filter by to address (starts with 0x).
+symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
+
+## Get A Specific Withdraw
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "txid": "0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5",
+            "fromAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+            "toAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
+            "symbol": "JOY",
+            "withdrawAmount": "2.000000000000000000",
+            "createdAt": 1574408211000
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific withdraw.
+
+### HTTP Request
+
+`GET http://example.com/v1/withdraw/<ID>`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | ID of the withdraw to retrieve.
 
 # Action
 
