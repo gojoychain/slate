@@ -647,10 +647,7 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-txid | string | false | Filter by txid (starts with 0x).
-from_address | string | false | Filter by from address (starts with 0x).
-to_address | string | false | Filter by to address (starts with 0x).
-symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
+address | string | false | Filters deposit's to_address and withdraw's from_address (starts with 0x).
 
 # Action
 
