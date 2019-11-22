@@ -598,7 +598,7 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 ID | int | true | ID of the withdraw to retrieve.
 
-# Transactions
+# Transaction
 
 ## Get All Transactions
 
