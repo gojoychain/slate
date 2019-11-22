@@ -266,6 +266,36 @@
               </ul>
           </li>
           <li>
+            <a href="#deposit" class="toc-h1 toc-link" data-title="Deposit">Deposit</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-deposits" class="toc-h2 toc-link" data-title="Get All Deposits">Get All Deposits</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-deposit" class="toc-h2 toc-link" data-title="Get A Specific Deposit">Get A Specific Deposit</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#withdraw" class="toc-h1 toc-link" data-title="Withdraw">Withdraw</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-withdraws" class="toc-h2 toc-link" data-title="Get All Withdraws">Get All Withdraws</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-withdraw" class="toc-h2 toc-link" data-title="Get A Specific Withdraw">Get A Specific Withdraw</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transactions" class="toc-h1 toc-link" data-title="Transactions">Transactions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-transactions" class="toc-h2 toc-link" data-title="Get All Transactions">Get All Transactions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#action" class="toc-h1 toc-link" data-title="Action">Action</a>
               <ul class="toc-list-h2">
                   <li>
@@ -497,31 +527,31 @@ Save your API Key as you will not be able to retrieve it again!
 <td>openid</td>
 <td>string</td>
 <td>false</td>
-<td>Filter users with that OpenID.</td>
+<td>Filter by OpenID.</td>
 </tr>
 <tr>
 <td>first_name</td>
 <td>string</td>
 <td>false</td>
-<td>Filter users with that first name.</td>
+<td>Filter by first name.</td>
 </tr>
 <tr>
 <td>last_name</td>
 <td>string</td>
 <td>false</td>
-<td>Filter users with that last name.</td>
+<td>Filter by last name.</td>
 </tr>
 <tr>
 <td>email</td>
 <td>string</td>
 <td>false</td>
-<td>Filter users with that email.</td>
+<td>Filter by email.</td>
 </tr>
 <tr>
 <td>mobile</td>
 <td>string</td>
 <td>false</td>
-<td>Filter users with that mobile number.</td>
+<td>Filter by mobile number.</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-user'>Get A Specific User</h2>
@@ -648,7 +678,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>address</td>
 <td>string</td>
 <td>false</td>
-<td>Filter wallets with that address (starts with 0x).</td>
+<td>Filter by address (starts with 0x).</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-wallet'>Get A Specific Wallet</h2>
@@ -756,13 +786,13 @@ Save your API Key as you will not be able to retrieve it again!
 <td>address</td>
 <td>string</td>
 <td>false</td>
-<td>Filter balances with that address (starts with 0x).</td>
+<td>Filter by address (starts with 0x).</td>
 </tr>
 <tr>
 <td>symbol</td>
 <td>string</td>
 <td>false</td>
-<td>Filter wallets with that symbol. One of: [<code>JOY</code>, <code>JUSD</code>].</td>
+<td>Filter by symbol. One of: [<code>JOY</code>, <code>JUSD</code>].</td>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-balance'>Get A Specific Balance</h2>
@@ -783,7 +813,7 @@ Save your API Key as you will not be able to retrieve it again!
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific wallet.</p>
+<p>This endpoint retrieves a specific balance.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/balance/&lt;ID&gt;</code></p>
 <h3 id='headers-8'>Headers</h3>
@@ -816,6 +846,328 @@ Save your API Key as you will not be able to retrieve it again!
 <td>ID of the balance to retrieve.</td>
 </tr>
 </tbody></table>
+<h1 id='deposit'>Deposit</h1><h2 id='get-all-deposits'>Get All Deposits</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fromAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"toAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"depositAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574408118000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all deposits.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/deposit</code></p>
+<h3 id='headers-9'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by txid (starts with 0x).</td>
+</tr>
+<tr>
+<td>from_address</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by from address (starts with 0x).</td>
+</tr>
+<tr>
+<td>to_address</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by to address (starts with 0x).</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by symbol. One of: [<code>JOY</code>, <code>JUSD</code>].</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-deposit'>Get A Specific Deposit</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fromAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"toAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"depositAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574408118000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific deposit.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/deposit/&lt;ID&gt;</code></p>
+<h3 id='headers-10'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>int</td>
+<td>true</td>
+<td>ID of the deposit to retrieve.</td>
+</tr>
+</tbody></table>
+<h1 id='withdraw'>Withdraw</h1><h2 id='get-all-withdraws'>Get All Withdraws</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fromAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"toAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"withdrawAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574408211000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all withdraws.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/withdraw</code></p>
+<h3 id='headers-11'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by txid (starts with 0x).</td>
+</tr>
+<tr>
+<td>from_address</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by from address (starts with 0x).</td>
+</tr>
+<tr>
+<td>to_address</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by to address (starts with 0x).</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by symbol. One of: [<code>JOY</code>, <code>JUSD</code>].</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-withdraw'>Get A Specific Withdraw</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fromAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"toAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"withdrawAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574408211000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific withdraw.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/withdraw/&lt;ID&gt;</code></p>
+<h3 id='headers-12'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>int</td>
+<td>true</td>
+<td>ID of the withdraw to retrieve.</td>
+</tr>
+</tbody></table>
+<h1 id='transactions'>Transactions</h1><h2 id='get-all-transactions'>Get All Transactions</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fromAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"toAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"depositAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"withdrawAmount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574408118000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"txid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fromAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"toAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"depositAmount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"withdrawAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574408211000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all deposits and withdraws.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/transaction</code></p>
+<h3 id='headers-13'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>txid</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by txid (starts with 0x).</td>
+</tr>
+<tr>
+<td>from_address</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by from address (starts with 0x).</td>
+</tr>
+<tr>
+<td>to_address</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by to address (starts with 0x).</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by symbol. One of: [<code>JOY</code>, <code>JUSD</code>].</td>
+</tr>
+</tbody></table>
 <h1 id='action'>Action</h1><h2 id='withdraw-joy'>Withdraw JOY</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -827,9 +1179,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/withdraw-joy</code></p>
-<h3 id='headers-9'>Headers</h3>
+<h3 id='headers-14'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
