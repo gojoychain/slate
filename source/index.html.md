@@ -598,6 +598,60 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 ID | int | true | ID of the withdraw to retrieve.
 
+# Transactions
+
+## Get All Transactions
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "txid": "0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5",
+            "fromAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
+            "toAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+            "symbol": "JOY",
+            "depositAmount": "1.000000000000000000",
+            "withdrawAmount": null,
+            "createdAt": 1574408118000
+        },
+        {
+            "id": "1",
+            "txid": "0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5",
+            "fromAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+            "toAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
+            "symbol": "JOY",
+            "depositAmount": null,
+            "withdrawAmount": "2.000000000000000000",
+            "createdAt": 1574408211000
+        }
+    ]
+}
+```
+
+This endpoint retrieves all deposits and withdraws.
+
+### HTTP Request
+
+`GET http://example.com/v1/transaction`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+txid | string | false | Filter by txid (starts with 0x).
+from_address | string | false | Filter by from address (starts with 0x).
+to_address | string | false | Filter by to address (starts with 0x).
+symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
+
 # Action
 
 ## Withdraw JOY
