@@ -202,6 +202,7 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
+id | string | false | Filter by ID.
 openid | string | false | Filter by OpenID.
 first_name | string | false | Filter by first name.
 last_name | string | false | Filter by last name.
@@ -403,7 +404,7 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-id | string | false | Filter by id.
+id | string | false | Filter by ID.
 address | string | false | Filter by address (starts with 0x).
 symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
 
