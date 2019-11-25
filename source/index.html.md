@@ -135,6 +135,67 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 code | string | true | Code supplied by Passport API.
 
+## Request SMS Verification Code
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "SMS sent"
+    }
+}
+```
+
+This endpoint requests an SMS verification code from the Passport API.
+
+### HTTP Request
+
+`POST http://example.com/v1/verify`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+openid | string | true | OpenID of the user to verify.
+
+## Confirm SMS Verification Code
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "ticket": "d93b5795027427482c9f4b89442e4724"
+    }
+}
+```
+
+This endpoint confirms an SMS verification code sent from the Passport API.
+
+### HTTP Request
+
+`POST http://example.com/v1/confirm`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+openid | string | true | OpenID of the user to verify.
+code | number | true | SMS verification code.
+
 # User
 
 ## Get All Users
