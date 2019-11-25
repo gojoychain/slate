@@ -403,8 +403,9 @@ Authorization | true | Requires API Key.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
+id | string | false | Filter by id.
 address | string | false | Filter by address (starts with 0x).
-balance.symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
+symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
 
 ## Get A Specific Balance
 
