@@ -466,6 +466,124 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 ID | int | true | ID of the balance to retrieve.
 
+# Asset
+
+## Get All Assets
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "JOY Token",
+            "symbol": "JOY",
+            "decimals": 18,
+            "contractAddress": "0x0000000000000000000000000000000000000000",
+            "usdPrice": "0.500",
+            "iconUrl": "",
+            "createdAt": 1574666442000
+        },
+        {...}
+    ]
+}
+```
+
+This endpoint retrieves all assets.
+
+### HTTP Request
+
+`GET http://example.com/v1/asset`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+id | string | false | Filter by ID.
+symbol | string | false | Filter by symbol.
+decimals | string | false | Filter by decimals.
+
+## Get A Specific Asset
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "JOY Token",
+            "symbol": "JOY",
+            "decimals": 18,
+            "contractAddress": "0x0000000000000000000000000000000000000000",
+            "usdPrice": "0.500",
+            "iconUrl": "",
+            "createdAt": 1574666442000
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific asset.
+
+### HTTP Request
+
+`GET http://example.com/v1/asset/<ID>`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key.
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | ID of the asset to retrieve.
+
+## Create An Asset
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "Asset 1 added"
+    }
+}
+```
+
+This endpoint creates a new asset.
+
+### HTTP Request
+
+`POST http://example.com/v1/asset`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires Admin Key.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+name | string | true | Name of the asset.
+symbol | string | true | Symbol of the asset.
+decimals | number | true | Decimals of the asset.
+contract_address | string | true | Contract address of the asset.
+usd_price | number | true | Current USD price of the asset.
+icon_url | string | true | URL for the icon of the asset.
+
 # Deposit
 
 ## Get All Deposits
