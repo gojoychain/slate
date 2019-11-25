@@ -230,37 +230,47 @@ mobile | string | false | Filter by mobile number.
             "balance": [
                 {
                     "id": "1",
-                    "address": "0x0000000000000000000000000000000000000000",
+                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
                     "symbol": "JOY",
                     "amount": "0.000000000000000000",
                     "lockedAmount": "0.000000000000000000",
                     "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574316887000
+                    "createdAt": 1574308826000,
+                    "assetId": 7,
+                    "assetName": "JOY Token",
+                    "assetDecimals": 18,
+                    "assetUsdPrice": "0.500",
+                    "assetIconUrl": ""
                 },
                 {
                     "id": "2",
-                    "address": "0x0000000000000000000000000000000000000000",
+                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
                     "symbol": "JUSD",
                     "amount": "0.000000000000000000",
                     "lockedAmount": "0.000000000000000000",
                     "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574316887000
+                    "createdAt": 1574308826000,
+                    "assetId": null,
+                    "assetName": null,
+                    "assetDecimals": null,
+                    "assetUsdPrice": null,
+                    "assetIconUrl": null
                 }
             ],
             "user": {
-                "id": "1000000000",
+                "id": "1001483220",
                 "openID": "abcdefghijklmnopqrstuvwxyz=",
-                "firstName": "John",
-                "lastName": "Doe",
-                "email": "john.doe@gmail.com",
+                "firstName": "Deric",
+                "lastName": "Walintukan",
+                "email": "deric@bodhi.network",
                 "mobile": "1234567890",
                 "status": 1,
-                "createdAt": 1574316887000
+                "createdAt": 1574308826000
             },
             "wallet": {
-                "id": "1000000000",
-                "address": "0x0000000000000000000000000000000000000000",
-                "createdAt": 1574316887000
+                "id": "1001483220",
+                "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
+                "createdAt": 1574308826000
             }
         }
     ]
