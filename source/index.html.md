@@ -356,21 +356,31 @@ ID | int | true | ID of the wallet to retrieve.
     "data": [
         {
             "id": "1",
-            "address": "0x0000000000000000000000000000000000000000",
+            "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
-            "createdAt": 1574316887000
+            "createdAt": 1574308826000,
+            "assetId": 7,
+            "assetName": "JOY Token",
+            "assetDecimals": 18,
+            "assetUsdPrice": "0.500",
+            "assetIconUrl": ""
         },
         {
             "id": "2",
-            "address": "0x0000000000000000000000000000000000000000",
+            "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JUSD",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
-            "createdAt": 1574316887000
+            "createdAt": 1574308826000,
+            "assetId": null,
+            "assetName": null,
+            "assetDecimals": null,
+            "assetUsdPrice": null,
+            "assetIconUrl": null
         },
         {...}
     ]
@@ -394,7 +404,7 @@ Authorization | true | Requires API Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 address | string | false | Filter by address (starts with 0x).
-symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
+balance.symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
 
 ## Get A Specific Balance
 
