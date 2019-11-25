@@ -154,9 +154,10 @@ code | string | true | Code supplied by Passport API.
                     "lockedAmount": "0.000000000000000000",
                     "stakedAmount": "0.000000000000000000",
                     "createdAt": 1574308826000,
-                    "assetId": 7,
+                    "assetId": 1,
                     "assetName": "JOY Token",
                     "assetDecimals": 18,
+                    "assetContractAddress": "0x0000000000000000000000000000000000000000",
                     "assetUsdPrice": "0.500",
                     "assetIconUrl": ""
                 },
@@ -168,11 +169,12 @@ code | string | true | Code supplied by Passport API.
                     "lockedAmount": "0.000000000000000000",
                     "stakedAmount": "0.000000000000000000",
                     "createdAt": 1574308826000,
-                    "assetId": null,
-                    "assetName": null,
-                    "assetDecimals": null,
-                    "assetUsdPrice": null,
-                    "assetIconUrl": null
+                    "assetId": 2,
+                    "assetName": "JUSD",
+                    "assetDecimals": 18,
+                    "assetContractAddress": "0x28d7fEecd1aB9Dae7d83cbB986f2A2Ecb127183d",
+                    "assetUsdPrice": "0.000",
+                    "assetIconUrl": ""
                 }
             ],
             "user": {
@@ -236,9 +238,10 @@ mobile | string | false | Filter by mobile number.
                     "lockedAmount": "0.000000000000000000",
                     "stakedAmount": "0.000000000000000000",
                     "createdAt": 1574308826000,
-                    "assetId": 7,
+                    "assetId": 1,
                     "assetName": "JOY Token",
                     "assetDecimals": 18,
+                    "assetContractAddress": "0x0000000000000000000000000000000000000000",
                     "assetUsdPrice": "0.500",
                     "assetIconUrl": ""
                 },
@@ -250,11 +253,12 @@ mobile | string | false | Filter by mobile number.
                     "lockedAmount": "0.000000000000000000",
                     "stakedAmount": "0.000000000000000000",
                     "createdAt": 1574308826000,
-                    "assetId": null,
-                    "assetName": null,
-                    "assetDecimals": null,
-                    "assetUsdPrice": null,
-                    "assetIconUrl": null
+                    "assetId": 2,
+                    "assetName": "JUSD",
+                    "assetDecimals": 18,
+                    "assetContractAddress": "0x28d7fEecd1aB9Dae7d83cbB986f2A2Ecb127183d",
+                    "assetUsdPrice": "0.000",
+                    "assetIconUrl": ""
                 }
             ],
             "user": {
@@ -383,9 +387,10 @@ ID | int | true | ID of the wallet to retrieve.
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
             "createdAt": 1574308826000,
-            "assetId": 7,
+            "assetId": 1,
             "assetName": "JOY Token",
             "assetDecimals": 18,
+            "assetContractAddress": "0x0000000000000000000000000000000000000000",
             "assetUsdPrice": "0.500",
             "assetIconUrl": ""
         },
@@ -397,11 +402,12 @@ ID | int | true | ID of the wallet to retrieve.
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
             "createdAt": 1574308826000,
-            "assetId": null,
-            "assetName": null,
-            "assetDecimals": null,
-            "assetUsdPrice": null,
-            "assetIconUrl": null
+            "assetId": 2,
+            "assetName": "JUSD",
+            "assetDecimals": 18,
+            "assetContractAddress": "0x28d7fEecd1aB9Dae7d83cbB986f2A2Ecb127183d",
+            "assetUsdPrice": "0.000",
+            "assetIconUrl": ""
         },
         {...}
     ]
@@ -437,12 +443,18 @@ symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
     "data": [
         {
             "id": "1",
-            "address": "0x0000000000000000000000000000000000000000",
+            "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
-            "createdAt": 1574316887000
+            "createdAt": 1574308826000,
+            "assetId": 1,
+            "assetName": "JOY Token",
+            "assetDecimals": 18,
+            "assetContractAddress": "0x0000000000000000000000000000000000000000",
+            "assetUsdPrice": "0.500",
+            "assetIconUrl": ""
         }
     ]
 }
