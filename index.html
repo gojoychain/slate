@@ -266,6 +266,20 @@
               </ul>
           </li>
           <li>
+            <a href="#asset" class="toc-h1 toc-link" data-title="Asset">Asset</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-assets" class="toc-h2 toc-link" data-title="Get All Assets">Get All Assets</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-asset" class="toc-h2 toc-link" data-title="Get A Specific Asset">Get A Specific Asset</a>
+                  </li>
+                  <li>
+                    <a href="#create-an-asset" class="toc-h2 toc-link" data-title="Create An Asset">Create An Asset</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#deposit" class="toc-h1 toc-link" data-title="Deposit">Deposit</a>
               <ul class="toc-list-h2">
                   <li>
@@ -580,37 +594,47 @@ Save your API Key as you will not be able to retrieve it again!
             </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"lockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"stakedAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574316887000</span><span class="w">
+                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574308826000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY Token"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetDecimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetUsdPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.500"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetIconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JUSD"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"lockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"stakedAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000000000000000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574316887000</span><span class="w">
+                    </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574308826000</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetDecimals"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetUsdPrice"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"assetIconUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1001483220"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"openID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefghijklmnopqrstuvwxyz="</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@gmail.com"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deric"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Walintukan"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deric@bodhi.network"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567890"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574316887000</span><span class="w">
+                </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574308826000</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"wallet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000000000"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574316887000</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1001483220"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574308826000</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -878,6 +902,196 @@ Save your API Key as you will not be able to retrieve it again!
 <td>ID of the balance to retrieve.</td>
 </tr>
 </tbody></table>
+<h1 id='asset'>Asset</h1><h2 id='get-all-assets'>Get All Assets</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY Token"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contractAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usdPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.500"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574666442000</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all assets.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/asset</code></p>
+<h3 id='headers-9'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by ID.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by symbol.</td>
+</tr>
+<tr>
+<td>decimals</td>
+<td>string</td>
+<td>false</td>
+<td>Filter by decimals.</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-asset'>Get A Specific Asset</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY Token"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOY"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"decimals"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contractAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x0000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"usdPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.500"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1574666442000</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific asset.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET http://example.com/v1/asset/&lt;ID&gt;</code></p>
+<h3 id='headers-10'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>int</td>
+<td>true</td>
+<td>ID of the asset to retrieve.</td>
+</tr>
+</tbody></table>
+<h2 id='create-an-asset'>Create An Asset</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asset 1 added"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new asset.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>POST http://example.com/v1/asset</code></p>
+<h3 id='headers-11'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires Admin Key.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>Name of the asset.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>true</td>
+<td>Symbol of the asset.</td>
+</tr>
+<tr>
+<td>decimals</td>
+<td>number</td>
+<td>true</td>
+<td>Decimals of the asset.</td>
+</tr>
+<tr>
+<td>contract_address</td>
+<td>string</td>
+<td>true</td>
+<td>Contract address of the asset.</td>
+</tr>
+<tr>
+<td>usd_price</td>
+<td>number</td>
+<td>true</td>
+<td>Current USD price of the asset.</td>
+</tr>
+<tr>
+<td>icon_url</td>
+<td>string</td>
+<td>true</td>
+<td>URL for the icon of the asset.</td>
+</tr>
+</tbody></table>
 <h1 id='deposit'>Deposit</h1><h2 id='get-all-deposits'>Get All Deposits</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -898,9 +1112,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/deposit</code></p>
-<h3 id='headers-9'>Headers</h3>
+<h3 id='headers-12'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -914,7 +1128,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>Requires API Key.</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-4'>Query Parameters</h3>
+<h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -967,9 +1181,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific deposit.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/deposit/&lt;ID&gt;</code></p>
-<h3 id='headers-10'>Headers</h3>
+<h3 id='headers-13'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -983,7 +1197,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>Requires API Key.</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-4'>URL Parameters</h3>
+<h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1019,9 +1233,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all withdraws.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/withdraw</code></p>
-<h3 id='headers-11'>Headers</h3>
+<h3 id='headers-14'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -1035,7 +1249,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>Requires API Key.</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-5'>Query Parameters</h3>
+<h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1088,9 +1302,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific withdraw.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/withdraw/&lt;ID&gt;</code></p>
-<h3 id='headers-12'>Headers</h3>
+<h3 id='headers-15'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -1104,7 +1318,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>Requires API Key.</td>
 </tr>
 </tbody></table>
-<h3 id='url-parameters-5'>URL Parameters</h3>
+<h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1150,9 +1364,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits and withdraws.</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/transaction</code></p>
-<h3 id='headers-13'>Headers</h3>
+<h3 id='headers-16'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -1166,7 +1380,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>Requires API Key.</td>
 </tr>
 </tbody></table>
-<h3 id='query-parameters-6'>Query Parameters</h3>
+<h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1193,9 +1407,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/withdraw-joy</code></p>
-<h3 id='headers-14'>Headers</h3>
+<h3 id='headers-17'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -1209,7 +1423,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>Requires API Key.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
