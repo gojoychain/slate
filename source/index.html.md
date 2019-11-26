@@ -75,49 +75,21 @@ email | string | true | Email to register the API Key with.
 
 ```json
 {
-    "data": [
-        {
-            "balance": [
-                {
-                    "id": "1",
-                    "address": "0x0000000000000000000000000000000000000000",
-                    "symbol": "JOY",
-                    "amount": "0.000000000000000000",
-                    "lockedAmount": "0.000000000000000000",
-                    "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574316887000
-                },
-                {
-                    "id": "2",
-                    "address": "0x0000000000000000000000000000000000000000",
-                    "symbol": "JUSD",
-                    "amount": "0.000000000000000000",
-                    "lockedAmount": "0.000000000000000000",
-                    "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574316887000
-                }
-            ],
-            "user": {
-                "id": "1000000000",
-                "openID": "abcdefghijklmnopqrstuvwxyz=",
-                "firstName": "John",
-                "lastName": "Doe",
-                "email": "john.doe@gmail.com",
-                "mobile": "1234567890",
-                "status": 1,
-                "createdAt": 1574316887000
-            },
-            "wallet": {
-                "id": "1000000000",
-                "address": "0x0000000000000000000000000000000000000000",
-                "createdAt": 1574316887000
-            }
+    "data": {
+        "cookie": {
+            "originalMaxAge": 2419200000,
+            "expires": "2019-12-24T09:08:46.249Z",
+            "httpOnly": true,
+            "path": "/"
+        },
+        "passport": {
+            "user": "1001483220"
         }
-    ]
+    }
 }
 ```
 
-This endpoint authenticates with the Passport API and returns user info.
+This endpoint authenticates with the Passport API and returns session info.
 
 ### HTTP Request
 
