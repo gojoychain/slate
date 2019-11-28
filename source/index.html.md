@@ -22,52 +22,9 @@ Welcome to the Joy Plus API!
 
 # Authentication
 
-**[Register for an API Key](#generate-api-key)**
-
-An API key is needed to allow access to the APIs. API keys should be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: MY_API_KEY`
-
-<aside class="notice">
-You must replace <code>MY_API_KEY</code> with your personal API key.
-</aside>
+The backend server will automatically create a session cookie for the user when you [/login](#login), which is automatically stored on the frontend. Authentication is taken care of from this session cookie.
 
 # Auth
-
-## Generate API Key
-
-> 200 Response:
-
-```json
-{
-    "data": {
-        "apiKey": "your-new-api-key",
-        "message": "Save this API Key. It will not be shown again."
-    }
-}
-```
-
-This endpoint creates a new API Key.
-
-<aside class="warning">
-Save your API Key as you will not be able to retrieve it again!
-</aside>
-
-### HTTP Request
-
-`POST http://example.com/v1/register`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires Admin Key.
-
-### Body Parameters (JSON)
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-email | string | true | Email to register the API Key with.
 
 ## Login
 
@@ -76,20 +33,13 @@ email | string | true | Email to register the API Key with.
 ```json
 {
     "data": {
-        "cookie": {
-            "originalMaxAge": 2419200000,
-            "expires": "2019-12-24T09:08:46.249Z",
-            "httpOnly": true,
-            "path": "/"
-        },
-        "passport": {
-            "user": "1001483220"
-        }
+        "id": 1001483220,
+        "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"
     }
 }
 ```
 
-This endpoint authenticates with the Passport API and returns session info.
+This endpoint authenticates with the Passport API and returns user info.
 
 ### HTTP Request
 
