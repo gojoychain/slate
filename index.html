@@ -225,9 +225,6 @@
             <a href="#auth" class="toc-h1 toc-link" data-title="Auth">Auth</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#generate-api-key" class="toc-h2 toc-link" data-title="Generate API Key">Generate API Key</a>
-                  </li>
-                  <li>
                     <a href="#login" class="toc-h2 toc-link" data-title="Login">Login</a>
                   </li>
                   <li>
@@ -334,99 +331,22 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Joy Plus API!</p>
 <h1 id='authentication'>Authentication</h1>
-<p><strong><a href="#generate-api-key">Register for an API Key</a></strong></p>
-
-<p>An API key is needed to allow access to the APIs. API keys should be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: MY_API_KEY</code></p>
-
-<aside class="notice">
-You must replace <code>MY_API_KEY</code> with your personal API key.
-</aside>
-<h1 id='auth'>Auth</h1><h2 id='generate-api-key'>Generate API Key</h2>
+<p>The backend server will automatically create a session cookie for the user when you <a href="#login">login</a>, which is automatically stored on the frontend client. The user is authenticated by this session cookie.</p>
+<h1 id='auth'>Auth</h1><h2 id='login'>Login</h2>
 <blockquote>
 <p>200 Response:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"apiKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your-new-api-key"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Save this API Key. It will not be shown again."</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1001483220</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint creates a new API Key.</p>
-
-<aside class="warning">
-Save your API Key as you will not be able to retrieve it again!
-</aside>
+<p>This endpoint authenticates with the Passport API and returns user info.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST http://example.com/v1/register</code></p>
-<h3 id='headers'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires Admin Key.</td>
-</tr>
-</tbody></table>
-<h3 id='body-parameters-json'>Body Parameters (JSON)</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>email</td>
-<td>string</td>
-<td>true</td>
-<td>Email to register the API Key with.</td>
-</tr>
-</tbody></table>
-<h2 id='login'>Login</h2>
-<blockquote>
-<p>200 Response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"cookie"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"originalMaxAge"</span><span class="p">:</span><span class="w"> </span><span class="mi">2419200000</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-24T09:08:46.249Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"httpOnly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"passport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1001483220"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint authenticates with the Passport API and returns session info.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/login</code></p>
-<h3 id='headers-2'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
-<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -453,23 +373,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint requests an SMS verification code from the Passport API.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/verify</code></p>
-<h3 id='headers-3'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
-<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -496,23 +402,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint confirms an SMS verification code sent from the Passport API.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/confirm</code></p>
-<h3 id='headers-4'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
-<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -594,22 +486,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all users.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/user</code></p>
-<h3 id='headers-5'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -715,22 +593,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/user/&lt;ID&gt;</code></p>
-<h3 id='headers-6'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -763,22 +627,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all wallets.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/wallet</code></p>
-<h3 id='headers-7'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -810,22 +660,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific wallet.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/wallet/&lt;ID&gt;</code></p>
-<h3 id='headers-8'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -883,22 +719,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all balances.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/balance</code></p>
-<h3 id='headers-9'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -952,22 +774,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific balance.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/balance/&lt;ID&gt;</code></p>
-<h3 id='headers-10'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1005,22 +813,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all assets.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/asset</code></p>
-<h3 id='headers-11'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1069,22 +863,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific asset.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/asset/&lt;ID&gt;</code></p>
-<h3 id='headers-12'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1112,9 +892,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new asset.</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/asset</code></p>
-<h3 id='headers-13'>Headers</h3>
+<h3 id='headers'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -1128,7 +908,7 @@ Save your API Key as you will not be able to retrieve it again!
 <td>Requires Admin Key.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-5'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1194,22 +974,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits.</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/deposit</code></p>
-<h3 id='headers-14'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1263,22 +1029,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific deposit.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/deposit/&lt;ID&gt;</code></p>
-<h3 id='headers-15'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1315,22 +1067,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all withdraws.</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/withdraw</code></p>
-<h3 id='headers-16'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1384,22 +1122,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific withdraw.</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/withdraw/&lt;ID&gt;</code></p>
-<h3 id='headers-17'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1446,22 +1170,8 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits and withdraws.</p>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>GET http://example.com/v1/transaction</code></p>
-<h3 id='headers-18'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1489,23 +1199,9 @@ Save your API Key as you will not be able to retrieve it again!
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-18'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/withdraw-joy</code></p>
-<h3 id='headers-19'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Authorization</td>
-<td>true</td>
-<td>Requires API Key.</td>
-</tr>
-</tbody></table>
-<h3 id='body-parameters-json-6'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-5'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
