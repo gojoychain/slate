@@ -22,7 +22,7 @@ Welcome to the Joy Plus API!
 
 # Authentication
 
-The backend server will automatically create a session cookie for the user when you [/login](#login), which is automatically stored on the frontend. Authentication is taken care of from this session cookie.
+The backend server will automatically create a session cookie for the user when you [login](#login), which is automatically stored on the frontend client. The user is authenticated by this session cookie.
 
 # Auth
 
@@ -44,12 +44,6 @@ This endpoint authenticates with the Passport API and returns user info.
 ### HTTP Request
 
 `POST http://example.com/v1/login`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### Body Parameters (JSON)
 
@@ -75,12 +69,6 @@ This endpoint requests an SMS verification code from the Passport API.
 
 `POST http://example.com/v1/verify`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### Body Parameters (JSON)
 
 Parameter | Type | Required | Description
@@ -104,12 +92,6 @@ This endpoint confirms an SMS verification code sent from the Passport API.
 ### HTTP Request
 
 `POST http://example.com/v1/confirm`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### Body Parameters (JSON)
 
@@ -186,12 +168,6 @@ This endpoint retrieves all users.
 ### HTTP Request
 
 `GET http://example.com/v1/user`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### Query Parameters
 
@@ -270,12 +246,6 @@ This endpoint retrieves a specific user.
 
 `GET http://example.com/v1/user/<ID>`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### URL Parameters
 
 Parameter | Type | Required | Description
@@ -307,12 +277,6 @@ This endpoint retrieves all wallets.
 
 `GET http://example.com/v1/wallet`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -340,12 +304,6 @@ This endpoint retrieves a specific wallet.
 ### HTTP Request
 
 `GET http://example.com/v1/wallet/<ID>`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### URL Parameters
 
@@ -403,12 +361,6 @@ This endpoint retrieves all balances.
 
 `GET http://example.com/v1/balance`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -449,12 +401,6 @@ This endpoint retrieves a specific balance.
 
 `GET http://example.com/v1/balance/<ID>`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### URL Parameters
 
 Parameter | Type | Required | Description
@@ -491,12 +437,6 @@ This endpoint retrieves all assets.
 
 `GET http://example.com/v1/asset`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -531,12 +471,6 @@ This endpoint retrieves a specific asset.
 ### HTTP Request
 
 `GET http://example.com/v1/asset/<ID>`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### URL Parameters
 
@@ -608,12 +542,6 @@ This endpoint retrieves all deposits.
 
 `GET http://example.com/v1/deposit`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -648,12 +576,6 @@ This endpoint retrieves a specific deposit.
 ### HTTP Request
 
 `GET http://example.com/v1/deposit/<ID>`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### URL Parameters
 
@@ -690,12 +612,6 @@ This endpoint retrieves all withdraws.
 
 `GET http://example.com/v1/withdraw`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -730,12 +646,6 @@ This endpoint retrieves a specific withdraw.
 ### HTTP Request
 
 `GET http://example.com/v1/withdraw/<ID>`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### URL Parameters
 
@@ -782,12 +692,6 @@ This endpoint retrieves all deposits and withdraws.
 
 `GET http://example.com/v1/transaction`
 
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
-
 ### Query Parameters
 
 Parameter | Type | Required | Description
@@ -813,12 +717,6 @@ This endpoint withdraws JOY from the admin account and deducts the `value` from 
 ### HTTP Request
 
 `POST http://example.com/v1/withdraw-joy`
-
-### Headers
-
-Header | Required | Description
------- | -------- | -----------
-Authorization | true | Requires API Key.
 
 ### Body Parameters (JSON)
 
