@@ -69,12 +69,6 @@ This endpoint requests an SMS verification code from the Passport API.
 
 `POST http://example.com/v1/verify`
 
-### Body Parameters (JSON)
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-openid | string | true | OpenID of the user to verify.
-
 ## Confirm SMS Verification Code
 
 > 200 Response:
@@ -97,7 +91,6 @@ This endpoint confirms an SMS verification code sent from the Passport API.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-openid | string | true | OpenID of the user to verify.
 code | number | true | SMS verification code.
 
 # User
