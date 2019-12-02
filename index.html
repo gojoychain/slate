@@ -375,22 +375,6 @@
 <p>This endpoint requests an SMS verification code from the Passport API.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/verify</code></p>
-<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>openid</td>
-<td>string</td>
-<td>true</td>
-<td>OpenID of the user to verify.</td>
-</tr>
-</tbody></table>
 <h2 id='confirm-sms-verification-code'>Confirm SMS Verification Code</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -404,7 +388,7 @@
 <p>This endpoint confirms an SMS verification code sent from the Passport API.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/confirm</code></p>
-<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -413,12 +397,6 @@
 <th>Description</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>openid</td>
-<td>string</td>
-<td>true</td>
-<td>OpenID of the user to verify.</td>
-</tr>
 <tr>
 <td>code</td>
 <td>number</td>
@@ -908,7 +886,7 @@
 <td>Requires Admin Key.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1201,7 +1179,7 @@
 <p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
 <h3 id='http-request-18'>HTTP Request</h3>
 <p><code>POST http://example.com/v1/withdraw-joy</code></p>
-<h3 id='body-parameters-json-5'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
