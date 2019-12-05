@@ -489,6 +489,111 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 ID | int | true | ID of the balance to retrieve.
 
+# Locked Balance
+
+## Get All Locked Balances
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "17",
+            "balanceID": "1",
+            "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+            "symbol": "JOY",
+            "amount": "2.000000000000000000",
+            "processed": 1,
+            "expiresAt": 1575529620000,
+            "createdAt": 1575557999000
+        },
+        {...}
+    ]
+}
+```
+
+This endpoint retrieves all locked balances.
+
+### HTTP Request
+
+`GET http://example.com/api/v1/locked-balance`
+
+### Query Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+id | string | false | Filter by ID.
+balance_id | string | false | Filter by Balance ID.
+address | string | false | Filter by address (starts with 0x).
+symbol | string | false | Filter by symbol.
+
+## Get A Specific Locked Balance
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "17",
+            "balanceID": "1",
+            "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+            "symbol": "JOY",
+            "amount": "2.000000000000000000",
+            "processed": 1,
+            "expiresAt": 1575529620000,
+            "createdAt": 1575557999000
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific locked balance.
+
+### HTTP Request
+
+`GET http://example.com/api/v1/balance/<ID>`
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | ID of the locked balance to retrieve.
+
+## Create A Locked Balance
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "LockedBalance 1 added"
+    }
+}
+```
+
+This endpoint creates a new locked balance.
+
+### HTTP Request
+
+`POST http://example.com/api/v1/locked-balance`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key with scope `locked_balance.create`.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+address | string | true | Wallet address (starts with 0x).
+symbol | string | true | Token symbol.
+amount | string | true | Amount to lock up (in decimal format).
+expires_at | number | true | Date of expiration for the locked up amount (in UNIX milliseconds).
+
 # Asset
 
 ## Get All Assets
