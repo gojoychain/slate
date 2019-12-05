@@ -26,7 +26,7 @@ The backend server will automatically create a session cookie for the user when 
 
 # Auth
 
-## Login
+## SSO
 
 > 200 Response:
 
@@ -43,13 +43,32 @@ This endpoint authenticates with the Passport API and returns user info.
 
 ### HTTP Request
 
-`POST http://example.com/v1/login`
+`GET http://example.com/v1/sso.html`
 
-### Body Parameters (JSON)
+### Query Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 code | string | true | Code supplied by Passport API.
+
+## User Info
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "id": 1001483220,
+        "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"
+    }
+}
+```
+
+This endpoint returns user info.
+
+### HTTP Request
+
+`GET http://example.com/v1/user-info`
 
 ## Request SMS Verification Code
 
