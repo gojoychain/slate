@@ -22,7 +22,17 @@ Welcome to the Joy Plus API!
 
 # Authentication
 
-The backend server will automatically create a session cookie for the user when you [login](#login), which is automatically stored on the frontend client. The user is authenticated by this session cookie.
+## Session Cookie
+
+The majority of the APIs are authenticated with a session cookie. The backend server will automatically create a session cookie for the user when they login at the Passport website. This cookie is automatically stored on the user's browser. The user is authenticated by this session cookie.
+
+## API Key
+
+Some APIs require an `API Key` header in the form of `Authorization: $API_KEY`. This is created through the [Create API Key](#create-api-key) endpoint. Also note that some endpoints require a `specific scope (permission)`. Admins can add the scope to an existing API Key.
+
+## Admin API Key
+
+Some APIs require an `Admin API Key` header in the form of `Authorization: $ADMIN_API_KEY`. See the administrator for getting that key.
 
 # Auth
 
