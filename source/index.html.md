@@ -112,6 +112,76 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 code | number | true | SMS verification code.
 
+# API Key
+
+## Create API Key
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "apiKey": "xxx-xxx-xxx-xxx-xxx",
+        "message": "Save this API Key. It will not be shown again."
+    }
+}
+```
+
+This endpoint creates a new API Key.
+
+### HTTP Request
+
+`POST http://example.com/api/v1/api-key`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires Admin Key.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+email | string | true | Email address.
+
+## Add/Remove Scope
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "Scope added: example_scope.create"
+    }
+}
+{
+    "data": {
+        "message": "Scope removed: example_scope.create"
+    }
+}
+```
+
+This endpoint adds or removes a scope from an API Key. Some APIs require a specific scope (permission) tied to the API Key.
+
+### HTTP Request
+
+`PUT http://example.com/api/v1/api-key`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires Admin Key.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+email | string | true | Email address.
+scope_add | string | true | Scope to add. Either `scope_add` or `scope_remove` is required.
+scope_remove | string | true | Scope to remove. Either `scope_add` or `scope_remove` is required.
+
 # User
 
 ## Get All Users
