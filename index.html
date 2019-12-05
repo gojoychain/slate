@@ -220,6 +220,17 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#session-cookie" class="toc-h2 toc-link" data-title="Session Cookie">Session Cookie</a>
+                  </li>
+                  <li>
+                    <a href="#api-key" class="toc-h2 toc-link" data-title="API Key">API Key</a>
+                  </li>
+                  <li>
+                    <a href="#admin-api-key" class="toc-h2 toc-link" data-title="Admin API Key">Admin API Key</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#auth" class="toc-h1 toc-link" data-title="Auth">Auth</a>
@@ -239,7 +250,7 @@
               </ul>
           </li>
           <li>
-            <a href="#api-key" class="toc-h1 toc-link" data-title="API Key">API Key</a>
+            <a href="#api-key-2" class="toc-h1 toc-link" data-title="API Key">API Key</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#create-api-key" class="toc-h2 toc-link" data-title="Create API Key">Create API Key</a>
@@ -358,8 +369,12 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Joy Plus API!</p>
-<h1 id='authentication'>Authentication</h1>
-<p>The backend server will automatically create a session cookie for the user when you <a href="#login">login</a>, which is automatically stored on the frontend client. The user is authenticated by this session cookie.</p>
+<h1 id='authentication'>Authentication</h1><h2 id='session-cookie'>Session Cookie</h2>
+<p>The majority of the APIs are authenticated with a session cookie. The backend server will automatically create a session cookie for the user when they login at the Passport website. This cookie is automatically stored on the user&#39;s browser. The user is authenticated by this session cookie.</p>
+<h2 id='api-key'>API Key</h2>
+<p>Some APIs require an <code>API Key</code> header in the form of <code>Authorization: $API_KEY</code>. This is created through the <a href="#create-api-key">Create API Key</a> endpoint. Also note that some endpoints require a <code>specific scope (permission)</code>. Admins can add the scope to an existing API Key.</p>
+<h2 id='admin-api-key'>Admin API Key</h2>
+<p>Some APIs require an <code>Admin API Key</code> header in the form of <code>Authorization: $ADMIN_API_KEY</code>. See the administrator for getting that key.</p>
 <h1 id='auth'>Auth</h1><h2 id='sso'>SSO</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -446,7 +461,7 @@
 <td>SMS verification code.</td>
 </tr>
 </tbody></table>
-<h1 id='api-key'>API Key</h1><h2 id='create-api-key'>Create API Key</h2>
+<h1 id='api-key-2'>API Key</h1><h2 id='create-api-key'>Create API Key</h2>
 <blockquote>
 <p>200 Response:</p>
 </blockquote>
