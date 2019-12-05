@@ -43,7 +43,7 @@ This endpoint authenticates with the Passport API and returns user info.
 
 ### HTTP Request
 
-`GET http://example.com/v1/sso.html`
+`GET http://example.com/api/v1/sso.html`
 
 ### Query Parameters
 
@@ -68,7 +68,7 @@ This endpoint returns user info.
 
 ### HTTP Request
 
-`GET http://example.com/v1/user-info`
+`GET http://example.com/api/v1/user-info`
 
 ## Request SMS Verification Code
 
@@ -86,7 +86,7 @@ This endpoint requests an SMS verification code from the Passport API.
 
 ### HTTP Request
 
-`POST http://example.com/v1/verify`
+`POST http://example.com/api/v1/verify`
 
 ## Confirm SMS Verification Code
 
@@ -104,7 +104,7 @@ This endpoint confirms an SMS verification code sent from the Passport API.
 
 ### HTTP Request
 
-`POST http://example.com/v1/confirm`
+`POST http://example.com/api/v1/confirm`
 
 ### Body Parameters (JSON)
 
@@ -179,7 +179,7 @@ This endpoint retrieves all users.
 
 ### HTTP Request
 
-`GET http://example.com/v1/user`
+`GET http://example.com/api/v1/user`
 
 ### Query Parameters
 
@@ -256,7 +256,7 @@ This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET http://example.com/v1/user/<ID>`
+`GET http://example.com/api/v1/user/<ID>`
 
 ### URL Parameters
 
@@ -287,7 +287,7 @@ This endpoint retrieves all wallets.
 
 ### HTTP Request
 
-`GET http://example.com/v1/wallet`
+`GET http://example.com/api/v1/wallet`
 
 ### Query Parameters
 
@@ -315,7 +315,7 @@ This endpoint retrieves a specific wallet.
 
 ### HTTP Request
 
-`GET http://example.com/v1/wallet/<ID>`
+`GET http://example.com/api/v1/wallet/<ID>`
 
 ### URL Parameters
 
@@ -371,7 +371,7 @@ This endpoint retrieves all balances.
 
 ### HTTP Request
 
-`GET http://example.com/v1/balance`
+`GET http://example.com/api/v1/balance`
 
 ### Query Parameters
 
@@ -411,7 +411,7 @@ This endpoint retrieves a specific balance.
 
 ### HTTP Request
 
-`GET http://example.com/v1/balance/<ID>`
+`GET http://example.com/api/v1/balance/<ID>`
 
 ### URL Parameters
 
@@ -447,7 +447,7 @@ This endpoint retrieves all assets.
 
 ### HTTP Request
 
-`GET http://example.com/v1/asset`
+`GET http://example.com/api/v1/asset`
 
 ### Query Parameters
 
@@ -482,7 +482,7 @@ This endpoint retrieves a specific asset.
 
 ### HTTP Request
 
-`GET http://example.com/v1/asset/<ID>`
+`GET http://example.com/api/v1/asset/<ID>`
 
 ### URL Parameters
 
@@ -506,7 +506,7 @@ This endpoint creates a new asset.
 
 ### HTTP Request
 
-`POST http://example.com/v1/asset`
+`POST http://example.com/api/v1/asset`
 
 ### Headers
 
@@ -552,7 +552,7 @@ This endpoint retrieves all deposits.
 
 ### HTTP Request
 
-`GET http://example.com/v1/deposit`
+`GET http://example.com/api/v1/deposit`
 
 ### Query Parameters
 
@@ -587,7 +587,7 @@ This endpoint retrieves a specific deposit.
 
 ### HTTP Request
 
-`GET http://example.com/v1/deposit/<ID>`
+`GET http://example.com/api/v1/deposit/<ID>`
 
 ### URL Parameters
 
@@ -622,7 +622,7 @@ This endpoint retrieves all withdraws.
 
 ### HTTP Request
 
-`GET http://example.com/v1/withdraw`
+`GET http://example.com/api/v1/withdraw`
 
 ### Query Parameters
 
@@ -657,7 +657,7 @@ This endpoint retrieves a specific withdraw.
 
 ### HTTP Request
 
-`GET http://example.com/v1/withdraw/<ID>`
+`GET http://example.com/api/v1/withdraw/<ID>`
 
 ### URL Parameters
 
@@ -702,7 +702,7 @@ This endpoint retrieves all deposits and withdraws.
 
 ### HTTP Request
 
-`GET http://example.com/v1/transaction`
+`GET http://example.com/api/v1/transaction`
 
 ### Query Parameters
 
@@ -728,7 +728,7 @@ This endpoint withdraws JOY from the admin account and deducts the `value` from 
 
 ### HTTP Request
 
-`POST http://example.com/v1/withdraw-joy`
+`POST http://example.com/api/v1/withdraw-joy`
 
 ### Body Parameters (JSON)
 
