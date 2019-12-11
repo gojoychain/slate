@@ -197,8 +197,8 @@ This endpoint registers a Google Authenticator device. This endpoint should be c
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 secret | string | true | Google Authenticator secret
-sms_code | string | true | SMS code received by Google. Either `sms_code` or `code` is required.
-code | string | true | Google Authenticator code from mobile app. Either `sms_code` or `code` is required.
+sms_code | string | true | SMS code received by Google. Required for non-registered Google Auth users.
+code | string | true | Google Authenticator code from mobile app. Required for existing Google Auth users.
 
 ## Confirm Google Authenticator Code
 
@@ -291,8 +291,8 @@ Authorization | true | Requires Admin Key.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 email | string | true | Email address.
-scope_add | string | true | Scope to add. Either `scope_add` or `scope_remove` is required.
-scope_remove | string | true | Scope to remove. Either `scope_add` or `scope_remove` is required.
+scope_add | string | true | Scope to add. Required if you want to add a scope.
+scope_remove | string | true | Scope to remove. Required if you want to remove a scope.
 
 # User
 
