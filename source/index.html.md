@@ -157,8 +157,8 @@ This endpoint checks if the user has Google Authenticator enabled from the Passp
 ```json
 {
     "data": {
-        "qrcode": "abcdef1234567890",
-        "secret": "1234567890ABCDEFGHIJK"
+        "secret": "1234567890ABCDEFGHIJK",
+        "qrcode": "data:image/png;base64,ni2nf3nf02f3i1nfienfgh2498h291dnifb10hf31fh01fh31/183f1h3f801g3/f180h3f81hf3810efiqfn3nfi1nfi3nfof/feqnf891bf819bf1fb913bf"
     }
 }
 ```
