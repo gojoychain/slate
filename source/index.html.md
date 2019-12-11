@@ -207,7 +207,7 @@ code | string | true | Google Authenticator code from mobile app
 ```json
 {
     "data": {
-        "verified": true
+        "confirmed": true
     }
 }
 ```
