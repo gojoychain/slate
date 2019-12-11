@@ -409,7 +409,7 @@
 </span></code></pre>
 <p>This endpoint authenticates with the Passport API and returns user info.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET /api/v1/sso.html</code></p>
+<p><code>GET /v1/sso.html</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -439,7 +439,7 @@
 </span></code></pre>
 <p>This endpoint returns user info.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET /api/v1/user-info</code></p>
+<p><code>GET /v1/user-info</code></p>
 <h2 id='request-sms-verification-code'>Request SMS Verification Code</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -452,7 +452,7 @@
 </span></code></pre>
 <p>This endpoint requests an SMS verification code from the Passport API.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>POST /api/v1/sms/request</code></p>
+<p><code>POST /v1/sms/request</code></p>
 <h2 id='confirm-sms-verification-code'>Confirm SMS Verification Code</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -465,7 +465,7 @@
 </span></code></pre>
 <p>This endpoint confirms an SMS verification code sent from the Passport API.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST /api/v1/sms/confirm</code></p>
+<p><code>POST /v1/sms/confirm</code></p>
 <h3 id='body-parameters-json'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -494,7 +494,7 @@
 </span></code></pre>
 <p>This endpoint checks if the user has Google Authenticator enabled from the Passport API.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST /api/v1/google/check</code></p>
+<p><code>POST /v1/google/check</code></p>
 <h2 id='request-google-authenticator-qr-code'>Request Google Authenticator QR Code</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -508,7 +508,7 @@
 </span></code></pre>
 <p>This endpoint requests a Google Authenticator QR Code (encoded as a Base64 image) and Secret from the Passport API. The QR Code should be scanned by the user on their Google Authenticator mobile app. The Secret should be written down and saved by the user.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>POST /api/v1/google/request</code></p>
+<p><code>POST /v1/google/request</code></p>
 <h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -536,7 +536,7 @@
 </span></code></pre>
 <p>This endpoint registers a Google Authenticator device. This endpoint should be called after <a href="#request-google-authenticator-qr-code">Request Google Authenticator QR Code</a>.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST /api/v1/google/register</code></p>
+<p><code>POST /v1/google/register</code></p>
 <h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -577,7 +577,7 @@
 </span></code></pre>
 <p>This endpoint confirms a Google Authenticator code.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>POST /api/v1/google/confirm</code></p>
+<p><code>POST /v1/google/confirm</code></p>
 <h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -607,7 +607,7 @@
 </span></code></pre>
 <p>This endpoint creates a new API Key.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
-<p><code>POST /api/v1/api-key</code></p>
+<p><code>POST /v1/api-key</code></p>
 <h3 id='headers'>Headers</h3>
 <table><thead>
 <tr>
@@ -655,7 +655,7 @@
 </span></code></pre>
 <p>This endpoint adds or removes a scope from an API Key. Some APIs require a specific scope (permission) tied to the API Key.</p>
 <h3 id='http-request-10'>HTTP Request</h3>
-<p><code>PUT /api/v1/api-key</code></p>
+<p><code>PUT /v1/api-key</code></p>
 <h3 id='headers-2'>Headers</h3>
 <table><thead>
 <tr>
@@ -759,7 +759,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all users.</p>
 <h3 id='http-request-11'>HTTP Request</h3>
-<p><code>GET /api/v1/user</code></p>
+<p><code>GET /v1/user</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -866,7 +866,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
 <h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET /api/v1/user/&lt;ID&gt;</code></p>
+<p><code>GET /v1/user/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -900,7 +900,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all wallets.</p>
 <h3 id='http-request-13'>HTTP Request</h3>
-<p><code>GET /api/v1/wallet</code></p>
+<p><code>GET /v1/wallet</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -933,7 +933,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a specific wallet.</p>
 <h3 id='http-request-14'>HTTP Request</h3>
-<p><code>GET /api/v1/wallet/&lt;ID&gt;</code></p>
+<p><code>GET /v1/wallet/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -992,7 +992,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all balances.</p>
 <h3 id='http-request-15'>HTTP Request</h3>
-<p><code>GET /api/v1/balance</code></p>
+<p><code>GET /v1/balance</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1047,7 +1047,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a specific balance.</p>
 <h3 id='http-request-16'>HTTP Request</h3>
-<p><code>GET /api/v1/balance/&lt;ID&gt;</code></p>
+<p><code>GET /v1/balance/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1086,7 +1086,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all locked balances.</p>
 <h3 id='http-request-17'>HTTP Request</h3>
-<p><code>GET /api/v1/locked-balance</code></p>
+<p><code>GET /v1/locked-balance</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1142,7 +1142,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a specific locked balance.</p>
 <h3 id='http-request-18'>HTTP Request</h3>
-<p><code>GET /api/v1/balance/&lt;ID&gt;</code></p>
+<p><code>GET /v1/balance/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1171,7 +1171,7 @@
 </span></code></pre>
 <p>This endpoint creates a new locked balance.</p>
 <h3 id='http-request-19'>HTTP Request</h3>
-<p><code>POST /api/v1/locked-balance</code></p>
+<p><code>POST /v1/locked-balance</code></p>
 <h3 id='headers-3'>Headers</h3>
 <table><thead>
 <tr>
@@ -1242,7 +1242,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all assets.</p>
 <h3 id='http-request-20'>HTTP Request</h3>
-<p><code>GET /api/v1/asset</code></p>
+<p><code>GET /v1/asset</code></p>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1292,7 +1292,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a specific asset.</p>
 <h3 id='http-request-21'>HTTP Request</h3>
-<p><code>GET /api/v1/asset/&lt;ID&gt;</code></p>
+<p><code>GET /v1/asset/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1321,7 +1321,7 @@
 </span></code></pre>
 <p>This endpoint creates a new asset.</p>
 <h3 id='http-request-22'>HTTP Request</h3>
-<p><code>POST /api/v1/asset</code></p>
+<p><code>POST /v1/asset</code></p>
 <h3 id='headers-4'>Headers</h3>
 <table><thead>
 <tr>
@@ -1403,7 +1403,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all deposits.</p>
 <h3 id='http-request-23'>HTTP Request</h3>
-<p><code>GET /api/v1/deposit</code></p>
+<p><code>GET /v1/deposit</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1458,7 +1458,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a specific deposit.</p>
 <h3 id='http-request-24'>HTTP Request</h3>
-<p><code>GET /api/v1/deposit/&lt;ID&gt;</code></p>
+<p><code>GET /v1/deposit/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1496,7 +1496,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all withdraws.</p>
 <h3 id='http-request-25'>HTTP Request</h3>
-<p><code>GET /api/v1/withdraw</code></p>
+<p><code>GET /v1/withdraw</code></p>
 <h3 id='query-parameters-8'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1551,7 +1551,7 @@
 </span></code></pre>
 <p>This endpoint retrieves a specific withdraw.</p>
 <h3 id='http-request-26'>HTTP Request</h3>
-<p><code>GET /api/v1/withdraw/&lt;ID&gt;</code></p>
+<p><code>GET /v1/withdraw/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1599,7 +1599,7 @@
 </span></code></pre>
 <p>This endpoint retrieves all deposits and withdraws.</p>
 <h3 id='http-request-27'>HTTP Request</h3>
-<p><code>GET /api/v1/transaction</code></p>
+<p><code>GET /v1/transaction</code></p>
 <h3 id='query-parameters-9'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1628,7 +1628,7 @@
 </span></code></pre>
 <p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
 <h3 id='http-request-28'>HTTP Request</h3>
-<p><code>POST /api/v1/withdraw-joy</code></p>
+<p><code>POST /v1/withdraw-joy</code></p>
 <h3 id='body-parameters-json-9'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
