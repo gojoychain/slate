@@ -20,6 +20,16 @@ search: true
 
 Welcome to the Joy Plus API!
 
+## Base URL
+
+### Mainnet
+
+[https://wallet.joy.plus/api](https://wallet.joy.plus/api)
+
+### Testnet
+
+[https://wallettest.joy.plus/api](https://wallettest.joy.plus/api)
+
 # Authentication
 
 ## Session Cookie
