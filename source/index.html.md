@@ -140,6 +140,79 @@ This endpoint checks if the user has Google Authenticator enabled from the Passp
 
 `POST /api/v1/google/check`
 
+## Request Google Authenticator QR Code
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "qrcode": "abcdef1234567890",
+        "secret": "1234567890ABCDEFGHIJK"
+    }
+}
+```
+
+This endpoint requests a Google Authenticator QR Code (encoded as a Base64 image) and Secret from the Passport API. The QR Code should be scanned by the user on their Google Authenticator mobile app. The Secret should be written down and saved by the user.
+
+### HTTP Request
+
+`POST /api/v1/google/request`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+code | string | false | Existing Google Authenticator code
+
+## Register Google Authenticator Device
+
+> 200 Response:
+
+```json
+{
+    "data": {
+    }
+}
+```
+
+This endpoint registers a Google Authenticator device. This endpoint should be called after [Request Google Authenticator QR Code](#request-google-authenticator-qr-code).
+
+### HTTP Request
+
+`POST /api/v1/google/register`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+secret | string | true | Google Authenticator secret
+sms_code | string | true | SMS code received by Google
+code | string | true | Google Authenticator code from mobile app
+
+## Confirm Google Authenticator Code
+
+> 200 Response:
+
+```json
+{
+    "data": {
+    }
+}
+```
+
+This endpoint confirms a Google Authenticator code.
+
+### HTTP Request
+
+`POST /api/v1/google/confirm`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+code | string | true | Google Authenticator code from mobile app
+
 # API Key
 
 ## Create API Key
