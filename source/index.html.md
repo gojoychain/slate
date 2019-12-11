@@ -130,7 +130,7 @@ This endpoint confirms an SMS verification code sent from the Passport API.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-code | number | true | SMS verification code.
+code | string | true | SMS verification code.
 
 ## Check Google Authenticator Enabled
 
