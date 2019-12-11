@@ -96,7 +96,7 @@ This endpoint requests an SMS verification code from the Passport API.
 
 ### HTTP Request
 
-`POST /api/v1/verify`
+`POST /api/v1/sms/request`
 
 ## Confirm SMS Verification Code
 
@@ -114,7 +114,7 @@ This endpoint confirms an SMS verification code sent from the Passport API.
 
 ### HTTP Request
 
-`POST /api/v1/confirm`
+`POST /api/v1/sms/confirm`
 
 ### Body Parameters (JSON)
 
