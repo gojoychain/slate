@@ -18,17 +18,17 @@ search: true
 
 # Introduction
 
-Welcome to the Joy Plus API!
+Welcome to the Joy Plus API v1!
 
 ## Base URL
 
 ### Mainnet
 
-[https://wallet.joy.plus/api](https://wallet.joy.plus/api)
+[https://wallet.joy.plus/api/v1](https://wallet.joy.plus/api/v1)
 
 ### Testnet
 
-[https://wallettest.joy.plus/api](https://wallettest.joy.plus/api)
+[https://wallettest.joy.plus/api/v1](https://wallettest.joy.plus/api/v1)
 
 # Authentication
 
