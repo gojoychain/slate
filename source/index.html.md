@@ -122,6 +122,24 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 code | number | true | SMS verification code.
 
+## Check Google Authenticator Enabled
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "enabled": true
+    }
+}
+```
+
+This endpoint checks if the user has Google Authenticator enabled from the Passport API.
+
+### HTTP Request
+
+`POST /api/v1/google/check`
+
 # API Key
 
 ## Create API Key
