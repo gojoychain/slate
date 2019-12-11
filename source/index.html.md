@@ -197,7 +197,7 @@ This endpoint registers a Google Authenticator device. This endpoint should be c
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 secret | string | true | Google Authenticator secret
-sms_code | string | true | SMS code received by Google. Required for non-registered Google Auth users.
+sms_code | string | true | SMS code sent by Google. Required for first-time Google Auth users.
 code | string | true | Google Authenticator code from mobile app. Required for existing Google Auth users.
 
 ## Confirm Google Authenticator Code
