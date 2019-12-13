@@ -96,12 +96,12 @@ This endpoint returns user info.
 
 ```json
 {
-    "data": [
-        {
-            "setting": "googleAuthenticator",
+    "data": {
+        "google2FA": {
+            "name": "Google Authenticator",
             "enabled": true
         }
-    ]
+    }
 }
 ```
 
