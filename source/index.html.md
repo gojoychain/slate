@@ -90,6 +90,27 @@ This endpoint returns user info.
 
 `GET /user-info`
 
+## Wallet Settings
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "setting": "googleAuthenticator",
+            "enabled": true
+        }
+    ]
+}
+```
+
+This endpoint returns wallet settings.
+
+### HTTP Request
+
+`GET /settings`
+
 ## Request SMS Verification Code
 
 > 200 Response:
