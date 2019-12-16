@@ -194,7 +194,7 @@ This endpoint requests a Google Authenticator QR Code (encoded as a Base64 image
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-code | string | false | Existing Google Authenticator code
+code | string | false | Existing Google Authenticator code.
 
 ## Register Google Authenticator Device
 
@@ -243,7 +243,31 @@ This endpoint confirms a Google Authenticator code.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-code | string | true | Google Authenticator code from mobile app
+code | string | true | Google Authenticator code from mobile app.
+
+## Confirm Access Pin
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "confirmed": true
+    }
+}
+```
+
+This endpoint confirms an Asset Pin.
+
+### HTTP Request
+
+`POST /pin/confirm`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+pin | string | true | 6-digit Asset Pin.
 
 # API Key
 
@@ -314,6 +338,57 @@ Parameter | Type | Required | Description
 email | string | true | Email address.
 scope_add | string | true | Scope to add. Required if you want to add a scope.
 scope_remove | string | true | Scope to remove. Required if you want to remove a scope.
+
+# Access Pin
+
+## Create Access Pin
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "AccessPin 0 added"
+    }
+}
+```
+
+This endpoint creates a new Access Pin.
+
+### HTTP Request
+
+`POST /access-pin`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+pin | string | true | 6-digit access pin.
+
+## Change Access Pin
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "AccessPin updated"
+    }
+}
+```
+
+This endpoint changes an Access Pin.
+
+### HTTP Request
+
+`PUT /access-pin`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+old_pin | string | true | Old 6-digit access pin.
+new_pin | string | true | New 6-digit access pin.
 
 # User
 
