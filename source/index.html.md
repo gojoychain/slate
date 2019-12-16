@@ -365,7 +365,7 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 pin | string | true | 6-digit access pin.
 
-## Change Access Pin
+## Update Access Pin
 
 > 200 Response:
 
