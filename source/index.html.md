@@ -1052,6 +1052,6 @@ Parameter | Type | Required | Description
 from | string | true | Address to deduct the JOY from.
 to | string | true | Address to send the JOY to.
 value | string | true | Amount to withdraw. Should be decimal format, e.g. 1 JOY = "1".
-asset_pin | string | true | 6-digit code. Required if user has Asset Pin configured.
+access_pin | string | true | 6-digit code. Required if user has Access Pin set.
 sms_code | string | true | 6-digit code. Required if authenticating with SMS.
 google_code | string | true | 6-digit code. Required if authenticating with Google Auth.
