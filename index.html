@@ -253,9 +253,6 @@
                     <a href="#request-sms-verification-code" class="toc-h2 toc-link" data-title="Request SMS Verification Code">Request SMS Verification Code</a>
                   </li>
                   <li>
-                    <a href="#confirm-sms-verification-code" class="toc-h2 toc-link" data-title="Confirm SMS Verification Code">Confirm SMS Verification Code</a>
-                  </li>
-                  <li>
                     <a href="#check-google-authenticator-enabled" class="toc-h2 toc-link" data-title="Check Google Authenticator Enabled">Check Google Authenticator Enabled</a>
                   </li>
                   <li>
@@ -263,12 +260,6 @@
                   </li>
                   <li>
                     <a href="#register-google-authenticator-device" class="toc-h2 toc-link" data-title="Register Google Authenticator Device">Register Google Authenticator Device</a>
-                  </li>
-                  <li>
-                    <a href="#confirm-google-authenticator-code" class="toc-h2 toc-link" data-title="Confirm Google Authenticator Code">Confirm Google Authenticator Code</a>
-                  </li>
-                  <li>
-                    <a href="#confirm-access-pin" class="toc-h2 toc-link" data-title="Confirm Access Pin">Confirm Access Pin</a>
                   </li>
               </ul>
           </li>
@@ -486,35 +477,6 @@
 <p>This endpoint requests an SMS verification code from the Passport API.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST /sms/request</code></p>
-<h2 id='confirm-sms-verification-code'>Confirm SMS Verification Code</h2>
-<blockquote>
-<p>200 Response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"ticket"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d93b5795027427482c9f4b89442e4724"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint confirms an SMS verification code sent from the Passport API.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST /sms/confirm</code></p>
-<h3 id='body-parameters-json'>Body Parameters (JSON)</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>string</td>
-<td>true</td>
-<td>SMS verification code.</td>
-</tr>
-</tbody></table>
 <h2 id='check-google-authenticator-enabled'>Check Google Authenticator Enabled</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -526,7 +488,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint checks if the user has Google Authenticator enabled from the Passport API.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST /google/check</code></p>
 <h2 id='request-google-authenticator-qr-code'>Request Google Authenticator QR Code</h2>
 <blockquote>
@@ -540,9 +502,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint requests a Google Authenticator QR Code (encoded as a Base64 image) and Secret from the Passport API. The QR Code should be scanned by the user on their Google Authenticator mobile app. The Secret should be written down and saved by the user.</p>
-<h3 id='http-request-7'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST /google/request</code></p>
-<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -568,9 +530,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint registers a Google Authenticator device. This endpoint should be called after <a href="#request-google-authenticator-qr-code">Request Google Authenticator QR Code</a>.</p>
-<h3 id='http-request-8'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>POST /google/register</code></p>
-<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-2'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -598,64 +560,6 @@
 <td>Google Authenticator code from mobile app. Required for existing Google Auth users.</td>
 </tr>
 </tbody></table>
-<h2 id='confirm-google-authenticator-code'>Confirm Google Authenticator Code</h2>
-<blockquote>
-<p>200 Response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint confirms a Google Authenticator code.</p>
-<h3 id='http-request-9'>HTTP Request</h3>
-<p><code>POST /google/confirm</code></p>
-<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>code</td>
-<td>string</td>
-<td>true</td>
-<td>Google Authenticator code from mobile app.</td>
-</tr>
-</tbody></table>
-<h2 id='confirm-access-pin'>Confirm Access Pin</h2>
-<blockquote>
-<p>200 Response:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint confirms an Asset Pin.</p>
-<h3 id='http-request-10'>HTTP Request</h3>
-<p><code>POST /pin/confirm</code></p>
-<h3 id='body-parameters-json-5'>Body Parameters (JSON)</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>pin</td>
-<td>string</td>
-<td>true</td>
-<td>6-digit Asset Pin.</td>
-</tr>
-</tbody></table>
 <h1 id='api-key-2'>API Key</h1><h2 id='create-api-key'>Create API Key</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -668,7 +572,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new API Key.</p>
-<h3 id='http-request-11'>HTTP Request</h3>
+<h3 id='http-request-8'>HTTP Request</h3>
 <p><code>POST /api-key</code></p>
 <h3 id='headers'>Headers</h3>
 <table><thead>
@@ -684,7 +588,7 @@
 <td>Requires Admin Key.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-6'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-3'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -716,7 +620,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint adds or removes a scope from an API Key. Some APIs require a specific scope (permission) tied to the API Key.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-9'>HTTP Request</h3>
 <p><code>PUT /api-key</code></p>
 <h3 id='headers-2'>Headers</h3>
 <table><thead>
@@ -732,7 +636,7 @@
 <td>Requires Admin Key.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-7'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-4'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -771,9 +675,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new Access Pin.</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-10'>HTTP Request</h3>
 <p><code>POST /access-pin</code></p>
-<h3 id='body-parameters-json-8'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-5'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -788,6 +692,18 @@
 <td>true</td>
 <td>6-digit access pin.</td>
 </tr>
+<tr>
+<td>sms_code</td>
+<td>string</td>
+<td>true</td>
+<td>6-digit code. Required if authenticating with SMS.</td>
+</tr>
+<tr>
+<td>google_code</td>
+<td>string</td>
+<td>true</td>
+<td>6-digit code. Required if authenticating with Google Auth.</td>
+</tr>
 </tbody></table>
 <h2 id='update-access-pin'>Update Access Pin</h2>
 <blockquote>
@@ -800,9 +716,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint changes an Access Pin.</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-11'>HTTP Request</h3>
 <p><code>PUT /access-pin</code></p>
-<h3 id='body-parameters-json-9'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-6'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -822,6 +738,18 @@
 <td>string</td>
 <td>true</td>
 <td>New 6-digit access pin.</td>
+</tr>
+<tr>
+<td>sms_code</td>
+<td>string</td>
+<td>true</td>
+<td>6-digit code. Required if authenticating with SMS.</td>
+</tr>
+<tr>
+<td>google_code</td>
+<td>string</td>
+<td>true</td>
+<td>6-digit code. Required if authenticating with Google Auth.</td>
 </tr>
 </tbody></table>
 <h1 id='user'>User</h1><h2 id='get-all-users'>Get All Users</h2>
@@ -884,7 +812,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all users.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-12'>HTTP Request</h3>
 <p><code>GET /user</code></p>
 <h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
@@ -991,7 +919,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific user.</p>
-<h3 id='http-request-16'>HTTP Request</h3>
+<h3 id='http-request-13'>HTTP Request</h3>
 <p><code>GET /user/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -1025,7 +953,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all wallets.</p>
-<h3 id='http-request-17'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET /wallet</code></p>
 <h3 id='query-parameters-3'>Query Parameters</h3>
 <table><thead>
@@ -1058,7 +986,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific wallet.</p>
-<h3 id='http-request-18'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>GET /wallet/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -1117,7 +1045,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all balances.</p>
-<h3 id='http-request-19'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>GET /balance</code></p>
 <h3 id='query-parameters-4'>Query Parameters</h3>
 <table><thead>
@@ -1172,7 +1100,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific balance.</p>
-<h3 id='http-request-20'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>GET /balance/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
@@ -1211,7 +1139,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all locked balances.</p>
-<h3 id='http-request-21'>HTTP Request</h3>
+<h3 id='http-request-18'>HTTP Request</h3>
 <p><code>GET /locked-balance</code></p>
 <h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
@@ -1267,7 +1195,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific locked balance.</p>
-<h3 id='http-request-22'>HTTP Request</h3>
+<h3 id='http-request-19'>HTTP Request</h3>
 <p><code>GET /balance/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-4'>URL Parameters</h3>
 <table><thead>
@@ -1296,7 +1224,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new locked balance.</p>
-<h3 id='http-request-23'>HTTP Request</h3>
+<h3 id='http-request-20'>HTTP Request</h3>
 <p><code>POST /locked-balance</code></p>
 <h3 id='headers-3'>Headers</h3>
 <table><thead>
@@ -1312,7 +1240,7 @@
 <td>Requires API Key with scope <code>locked_balance.create</code>.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-10'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-7'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1367,7 +1295,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all assets.</p>
-<h3 id='http-request-24'>HTTP Request</h3>
+<h3 id='http-request-21'>HTTP Request</h3>
 <p><code>GET /asset</code></p>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
@@ -1417,7 +1345,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific asset.</p>
-<h3 id='http-request-25'>HTTP Request</h3>
+<h3 id='http-request-22'>HTTP Request</h3>
 <p><code>GET /asset/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-5'>URL Parameters</h3>
 <table><thead>
@@ -1446,7 +1374,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new asset.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-23'>HTTP Request</h3>
 <p><code>POST /asset</code></p>
 <h3 id='headers-4'>Headers</h3>
 <table><thead>
@@ -1462,7 +1390,7 @@
 <td>Requires Admin Key.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-11'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-8'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1528,7 +1456,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits.</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-24'>HTTP Request</h3>
 <p><code>GET /deposit</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
@@ -1583,7 +1511,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific deposit.</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-25'>HTTP Request</h3>
 <p><code>GET /deposit/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-6'>URL Parameters</h3>
 <table><thead>
@@ -1621,7 +1549,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all withdraws.</p>
-<h3 id='http-request-29'>HTTP Request</h3>
+<h3 id='http-request-26'>HTTP Request</h3>
 <p><code>GET /withdraw</code></p>
 <h3 id='query-parameters-8'>Query Parameters</h3>
 <table><thead>
@@ -1676,7 +1604,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific withdraw.</p>
-<h3 id='http-request-30'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>GET /withdraw/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
@@ -1724,7 +1652,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits and withdraws.</p>
-<h3 id='http-request-31'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>GET /transaction</code></p>
 <h3 id='query-parameters-9'>Query Parameters</h3>
 <table><thead>
@@ -1753,9 +1681,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
-<h3 id='http-request-32'>HTTP Request</h3>
+<h3 id='http-request-29'>HTTP Request</h3>
 <p><code>POST /withdraw-joy</code></p>
-<h3 id='body-parameters-json-12'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-9'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1781,6 +1709,24 @@
 <td>string</td>
 <td>true</td>
 <td>Amount to withdraw. Should be decimal format, e.g. 1 JOY = &quot;1&quot;.</td>
+</tr>
+<tr>
+<td>asset_pin</td>
+<td>string</td>
+<td>true</td>
+<td>6-digit code. Required if user has Asset Pin configured.</td>
+</tr>
+<tr>
+<td>sms_code</td>
+<td>string</td>
+<td>true</td>
+<td>6-digit code. Required if authenticating with SMS.</td>
+</tr>
+<tr>
+<td>google_code</td>
+<td>string</td>
+<td>true</td>
+<td>6-digit code. Required if authenticating with Google Auth.</td>
 </tr>
 </tbody></table>
 
