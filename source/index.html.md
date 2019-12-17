@@ -129,30 +129,6 @@ This endpoint requests an SMS verification code from the Passport API.
 
 `POST /sms/request`
 
-## Confirm SMS Verification Code
-
-> 200 Response:
-
-```json
-{
-    "data": {
-        "ticket": "d93b5795027427482c9f4b89442e4724"
-    }
-}
-```
-
-This endpoint confirms an SMS verification code sent from the Passport API.
-
-### HTTP Request
-
-`POST /sms/confirm`
-
-### Body Parameters (JSON)
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-code | string | true | SMS verification code.
-
 ## Check Google Authenticator Enabled
 
 > 200 Response:
@@ -220,54 +196,6 @@ Parameter | Type | Required | Description
 secret | string | true | Google Authenticator secret
 sms_code | string | true | SMS code sent by Google. Required for first-time Google Auth users.
 code | string | true | Google Authenticator code from mobile app. Required for existing Google Auth users.
-
-## Confirm Google Authenticator Code
-
-> 200 Response:
-
-```json
-{
-    "data": {
-        "confirmed": true
-    }
-}
-```
-
-This endpoint confirms a Google Authenticator code.
-
-### HTTP Request
-
-`POST /google/confirm`
-
-### Body Parameters (JSON)
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-code | string | true | Google Authenticator code from mobile app.
-
-## Confirm Access Pin
-
-> 200 Response:
-
-```json
-{
-    "data": {
-        "confirmed": true
-    }
-}
-```
-
-This endpoint confirms an Asset Pin.
-
-### HTTP Request
-
-`POST /pin/confirm`
-
-### Body Parameters (JSON)
-
-Parameter | Type | Required | Description
---------- | ---- | -------- | -----------
-pin | string | true | 6-digit Asset Pin.
 
 # API Key
 
@@ -364,6 +292,8 @@ This endpoint creates a new Access Pin.
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 pin | string | true | 6-digit access pin.
+sms_code | string | true | 6-digit code. Required if authenticating with SMS.
+google_code | string | true | 6-digit code. Required if authenticating with Google Auth.
 
 ## Update Access Pin
 
@@ -389,6 +319,8 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 old_pin | string | true | Old 6-digit access pin.
 new_pin | string | true | New 6-digit access pin.
+sms_code | string | true | 6-digit code. Required if authenticating with SMS.
+google_code | string | true | 6-digit code. Required if authenticating with Google Auth.
 
 # User
 
@@ -1120,3 +1052,6 @@ Parameter | Type | Required | Description
 from | string | true | Address to deduct the JOY from.
 to | string | true | Address to send the JOY to.
 value | string | true | Amount to withdraw. Should be decimal format, e.g. 1 JOY = "1".
+asset_pin | string | true | 6-digit code. Required if user has Asset Pin configured.
+sms_code | string | true | 6-digit code. Required if authenticating with SMS.
+google_code | string | true | 6-digit code. Required if authenticating with Google Auth.
