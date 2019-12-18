@@ -100,6 +100,14 @@ This endpoint returns user info.
         "google2FA": {
             "name": "Google Authenticator",
             "enabled": true
+        },
+        "assetPin": {
+            "name": "Asset PIN",
+            "enabled": true
+        },
+        "kyc": {
+            "name": "KYC (ID Verification)",
+            "enabled": false
         }
     }
 }
