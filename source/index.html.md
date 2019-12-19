@@ -295,13 +295,13 @@ This endpoint retrieves a specific KYC Document.
 
 ### HTTP Request
 
-`GET /kyc/<ID>`
+`GET /kyc/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | User ID.
+id | string | true | User ID.
 
 ## Create KYC Document
 
@@ -725,13 +725,13 @@ This endpoint retrieves a specific user.
 
 ### HTTP Request
 
-`GET /user/<ID>`
+`GET /user/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | ID of the user to retrieve.
+id | string | true | ID of the user to retrieve.
 
 # Wallet
 
@@ -784,13 +784,13 @@ This endpoint retrieves a specific wallet.
 
 ### HTTP Request
 
-`GET /wallet/<ID>`
+`GET /wallet/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | ID of the wallet to retrieve.
+id | string | true | ID of the wallet to retrieve.
 
 # Balance
 
@@ -880,13 +880,13 @@ This endpoint retrieves a specific balance.
 
 ### HTTP Request
 
-`GET /balance/<ID>`
+`GET /balance/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | ID of the balance to retrieve.
+id | string | true | ID of the balance to retrieve.
 
 # Locked Balance
 
@@ -952,13 +952,13 @@ This endpoint retrieves a specific locked balance.
 
 ### HTTP Request
 
-`GET /balance/<ID>`
+`GET /balance/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | ID of the locked balance to retrieve.
+id | string | true | ID of the locked balance to retrieve.
 
 ## Create A Locked Balance
 
@@ -1056,13 +1056,13 @@ This endpoint retrieves a specific asset.
 
 ### HTTP Request
 
-`GET /asset/<ID>`
+`GET /asset/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | ID of the asset to retrieve.
+id | string | true | ID of the asset to retrieve.
 
 ## Create An Asset
 
@@ -1161,13 +1161,13 @@ This endpoint retrieves a specific deposit.
 
 ### HTTP Request
 
-`GET /deposit/<ID>`
+`GET /deposit/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | ID of the deposit to retrieve.
+id | string | true | ID of the deposit to retrieve.
 
 # Withdraw
 
@@ -1231,13 +1231,13 @@ This endpoint retrieves a specific withdraw.
 
 ### HTTP Request
 
-`GET /withdraw/<ID>`
+`GET /withdraw/:id`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-ID | int | true | ID of the withdraw to retrieve.
+id | string | true | ID of the withdraw to retrieve.
 
 # Transaction
 
