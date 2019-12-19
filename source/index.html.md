@@ -337,6 +337,47 @@ residence_city | string | true | Residence city of user.
 residence_address | string | true | Residence address of user.
 residence_zip | string | true | Residence zip of user.
 
+## Update KYC Document
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "KYCDocument 1 updated"
+    }
+}
+```
+
+This endpoint changes a KYC Document.
+
+### HTTP Request
+
+`PUT /kyc/:id`
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+id | string | true | User ID.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+doc_type | string | false | Identity document type.
+id_number | string | false | ID number of document type.
+nationality | string | false | Country of nationality.
+birth_country | string | false | Birth country of user.
+birth_city | string | false | Birth city of user.
+birth_date | string | false | Birth date of user.
+residence_country | string | false | Residence country of user.
+residence_province | string | false | Residence province of user.
+residence_city | string | false | Residence city of user.
+residence_address | string | false | Residence address of user.
+residence_zip | string | false | Residence zip of user.
+status | number | false | Approved status. 0 = not approved, 1 = approved.
+
 ## Upload ID Image
 
 > Request:
