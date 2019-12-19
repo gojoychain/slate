@@ -205,6 +205,160 @@ secret | string | true | Google Authenticator secret
 sms_code | string | true | SMS code sent by Google. Required for first-time Google Auth users.
 code | string | true | Google Authenticator code from mobile app. Required for existing Google Auth users.
 
+# KYC Document
+
+## Get A Specific KYC Document
+
+> 200 Response:
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "docType": "National ID",
+            "idNumber": "1",
+            "nationality": "USA",
+            "birthCountry": "Canada",
+            "birthCity": "Ontario",
+            "birthDate": "1984-09-25T00:00:00.000Z",
+            "residenceCountry": "USA",
+            "residenceProvince": "",
+            "residenceCity": "San Mateo",
+            "residenceAddress": "123 Some Street",
+            "residenceZip": "98765",
+            "status": 0,
+            "createdAt": 1576691681000,
+            "updatedAt": 1576691681000
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific KYC Document.
+
+### HTTP Request
+
+`GET /kyc/<ID>`
+
+### URL Parameters
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+ID | int | true | User ID.
+
+## Create KYC Document
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "KYCDocument 1 added"
+    }
+}
+```
+
+This endpoint creates a new KYC Document.
+
+### HTTP Request
+
+`POST /kyc`
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+doc_type | string | true | Identity document type.
+id_number | string | true | ID number of document type.
+nationality | string | true | Country of nationality.
+birth_country | string | true | Birth country of user.
+birth_city | string | true | Birth city of user.
+birth_date | string | true | Birth date of user.
+residence_country | string | true | Residence country of user.
+residence_province | string | true | Residence province of user.
+residence_city | string | true | Residence city of user.
+residence_address | string | true | Residence address of user.
+residence_zip | string | true | Residence zip of user.
+
+## Upload ID Image
+
+> Request:
+
+```html
+<form action="/kyc/identity" method="post" enctype="multipart/form-data">
+  <input type="file" name="identity" />
+</form>
+```
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "KYC identity image uploaded"
+    }
+}
+```
+
+This endpoint accepts a `multipart/form-data` upload for the KYC image of identity document. Please see an example here [https://github.com/expressjs/multer#usage](https://github.com/expressjs/multer#usage). This will upload the image to AWS S3.
+
+### HTTP Request
+
+`POST /kyc/identity`
+
+## Upload Person Image
+
+> Request:
+
+```html
+<form action="/kyc/person" method="post" enctype="multipart/form-data">
+  <input type="file" name="person" />
+</form>
+```
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "KYC person image uploaded"
+    }
+}
+```
+
+This endpoint accepts a `multipart/form-data` upload for the KYC image of a person holding an identity document. Please see an example here [https://github.com/expressjs/multer#usage](https://github.com/expressjs/multer#usage). This will upload the image to AWS S3.
+
+### HTTP Request
+
+`POST /kyc/person`
+
+## Upload Residence Image
+
+> Request:
+
+```html
+<form action="/kyc/residence" method="post" enctype="multipart/form-data">
+  <input type="file" name="residence" />
+</form>
+```
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "KYC residence image uploaded"
+    }
+}
+```
+
+This endpoint accepts a `multipart/form-data` upload for the KYC image of proof of residence. Please see an example here [https://github.com/expressjs/multer#usage](https://github.com/expressjs/multer#usage). This will upload the image to AWS S3.
+
+### HTTP Request
+
+`POST /kyc/residence`
+
 # API Key
 
 ## Create API Key
