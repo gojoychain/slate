@@ -655,6 +655,7 @@ google_code | string | true | 6-digit code. Required if authenticating with Goog
             "user": {
                 "id": "1001483220",
                 "openID": "abcdefghijklmnopqrstuvwxyz=",
+                "acctType": "personal",
                 "firstName": "Deric",
                 "lastName": "Walintukan",
                 "email": "deric@bodhi.network",
@@ -733,6 +734,7 @@ mobile | string | false | Filter by mobile number.
             "user": {
                 "id": "1001483220",
                 "openID": "abcdefghijklmnopqrstuvwxyz=",
+                "acctType": "personal",
                 "firstName": "Deric",
                 "lastName": "Walintukan",
                 "email": "deric@bodhi.network",
