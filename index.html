@@ -345,6 +345,9 @@
                   <li>
                     <a href="#get-a-specific-balance" class="toc-h2 toc-link" data-title="Get A Specific Balance">Get A Specific Balance</a>
                   </li>
+                  <li>
+                    <a href="#update-a-balance" class="toc-h2 toc-link" data-title="Update A Balance">Update A Balance</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -409,7 +412,7 @@
             <a href="#action" class="toc-h1 toc-link" data-title="Action">Action</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#withdraw-joy" class="toc-h2 toc-link" data-title="Withdraw JOY">Withdraw JOY</a>
+                    <a href="#withdraw-tokens" class="toc-h2 toc-link" data-title="Withdraw Tokens">Withdraw Tokens</a>
                   </li>
               </ul>
           </li>
@@ -1563,6 +1566,72 @@
 <td>ID of the balance to retrieve.</td>
 </tr>
 </tbody></table>
+<h2 id='update-a-balance'>Update A Balance</h2>
+<blockquote>
+<p>200 Response:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Balanced added"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Balanced subtracted"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint adds to or subtracts from a Balance.</p>
+<h3 id='http-request-26'>HTTP Request</h3>
+<p><code>PUT /balance</code></p>
+<h3 id='headers-4'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>true</td>
+<td>Requires API Key with scope <code>balance.update</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='body-parameters-json-9'>Body Parameters (JSON)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>Wallet address.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>true</td>
+<td>Token symbol. Only <code>JOY</code> is supported currently.</td>
+</tr>
+<tr>
+<td>balance_add</td>
+<td>string</td>
+<td>true</td>
+<td>Amount to add in decimal format. e.g. 1 JOY = &quot;1&quot;.</td>
+</tr>
+<tr>
+<td>balance_sub</td>
+<td>string</td>
+<td>true</td>
+<td>Amount to subtract in decimal format. e.g. 1 JOY = &quot;1&quot;.</td>
+</tr>
+</tbody></table>
 <h1 id='locked-balance'>Locked Balance</h1><h2 id='get-all-locked-balances'>Get All Locked Balances</h2>
 <blockquote>
 <p>200 Response:</p>
@@ -1584,7 +1653,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all locked balances.</p>
-<h3 id='http-request-26'>HTTP Request</h3>
+<h3 id='http-request-27'>HTTP Request</h3>
 <p><code>GET /locked-balance</code></p>
 <h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
@@ -1640,7 +1709,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific locked balance.</p>
-<h3 id='http-request-27'>HTTP Request</h3>
+<h3 id='http-request-28'>HTTP Request</h3>
 <p><code>GET /balance/:id</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
@@ -1669,9 +1738,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new locked balance.</p>
-<h3 id='http-request-28'>HTTP Request</h3>
+<h3 id='http-request-29'>HTTP Request</h3>
 <p><code>POST /locked-balance</code></p>
-<h3 id='headers-4'>Headers</h3>
+<h3 id='headers-5'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -1685,7 +1754,7 @@
 <td>Requires API Key with scope <code>locked_balance.create</code>.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-9'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-10'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1740,7 +1809,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all assets.</p>
-<h3 id='http-request-29'>HTTP Request</h3>
+<h3 id='http-request-30'>HTTP Request</h3>
 <p><code>GET /asset</code></p>
 <h3 id='query-parameters-7'>Query Parameters</h3>
 <table><thead>
@@ -1790,7 +1859,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific asset.</p>
-<h3 id='http-request-30'>HTTP Request</h3>
+<h3 id='http-request-31'>HTTP Request</h3>
 <p><code>GET /asset/:id</code></p>
 <h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
@@ -1819,9 +1888,9 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new asset.</p>
-<h3 id='http-request-31'>HTTP Request</h3>
+<h3 id='http-request-32'>HTTP Request</h3>
 <p><code>POST /asset</code></p>
-<h3 id='headers-5'>Headers</h3>
+<h3 id='headers-6'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -1835,7 +1904,7 @@
 <td>Requires Admin Key.</td>
 </tr>
 </tbody></table>
-<h3 id='body-parameters-json-10'>Body Parameters (JSON)</h3>
+<h3 id='body-parameters-json-11'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1901,7 +1970,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits.</p>
-<h3 id='http-request-32'>HTTP Request</h3>
+<h3 id='http-request-33'>HTTP Request</h3>
 <p><code>GET /deposit</code></p>
 <h3 id='query-parameters-8'>Query Parameters</h3>
 <table><thead>
@@ -1956,7 +2025,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific deposit.</p>
-<h3 id='http-request-33'>HTTP Request</h3>
+<h3 id='http-request-34'>HTTP Request</h3>
 <p><code>GET /deposit/:id</code></p>
 <h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
@@ -1994,7 +2063,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all withdraws.</p>
-<h3 id='http-request-34'>HTTP Request</h3>
+<h3 id='http-request-35'>HTTP Request</h3>
 <p><code>GET /withdraw</code></p>
 <h3 id='query-parameters-9'>Query Parameters</h3>
 <table><thead>
@@ -2049,7 +2118,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific withdraw.</p>
-<h3 id='http-request-35'>HTTP Request</h3>
+<h3 id='http-request-36'>HTTP Request</h3>
 <p><code>GET /withdraw/:id</code></p>
 <h3 id='url-parameters-10'>URL Parameters</h3>
 <table><thead>
@@ -2097,7 +2166,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all deposits and withdraws.</p>
-<h3 id='http-request-36'>HTTP Request</h3>
+<h3 id='http-request-37'>HTTP Request</h3>
 <p><code>GET /transaction</code></p>
 <h3 id='query-parameters-10'>Query Parameters</h3>
 <table><thead>
@@ -2115,7 +2184,7 @@
 <td>Filters deposit&#39;s to_address and withdraw&#39;s from_address (starts with 0x).</td>
 </tr>
 </tbody></table>
-<h1 id='action'>Action</h1><h2 id='withdraw-joy'>Withdraw JOY</h2>
+<h1 id='action'>Action</h1><h2 id='withdraw-tokens'>Withdraw Tokens</h2>
 <blockquote>
 <p>200 Response:</p>
 </blockquote>
@@ -2125,10 +2194,10 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint withdraws JOY from the admin account and deducts the <code>value</code> from the <code>from</code> address.</p>
-<h3 id='http-request-37'>HTTP Request</h3>
-<p><code>POST /withdraw-joy</code></p>
-<h3 id='body-parameters-json-11'>Body Parameters (JSON)</h3>
+<p>This endpoint withdraws tokens from the admin account and deducts the <code>value</code> from the <code>from</code> address. <code>Reseller</code> accounts cannot withdraw.</p>
+<h3 id='http-request-38'>HTTP Request</h3>
+<p><code>POST /action/withdraw</code></p>
+<h3 id='body-parameters-json-12'>Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2154,6 +2223,12 @@
 <td>string</td>
 <td>true</td>
 <td>Amount to withdraw. Should be decimal format, e.g. 1 JOY = &quot;1&quot;.</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>true</td>
+<td>Token to withdraw. Only <code>JOY</code> is supported currently.</td>
 </tr>
 <tr>
 <td>access_pin</td>
