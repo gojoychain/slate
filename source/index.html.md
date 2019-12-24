@@ -1182,6 +1182,7 @@ icon_url | string | true | URL for the icon of the asset.
             "toAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
             "depositAmount": "1.000000000000000000",
+            "explorerUrl": "https://testnet.gojoychain.com/tx/0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5",
             "createdAt": 1574408118000
         },
         {...}
@@ -1218,6 +1219,7 @@ symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
             "toAddress": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
             "depositAmount": "1.000000000000000000",
+            "explorerUrl": "https://testnet.gojoychain.com/tx/0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5",
             "createdAt": 1574408118000
         }
     ]
@@ -1252,6 +1254,7 @@ id | string | true | ID of the deposit to retrieve.
             "toAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
             "symbol": "JOY",
             "withdrawAmount": "2.000000000000000000",
+            "explorerUrl": "https://testnet.gojoychain.com/tx/0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5",
             "createdAt": 1574408211000
         },
         {...}
@@ -1288,6 +1291,7 @@ symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
             "toAddress": "0xd5d087daabc73fc6cc5d9c1131b93acbd53a2428",
             "symbol": "JOY",
             "withdrawAmount": "2.000000000000000000",
+            "explorerUrl": "https://testnet.gojoychain.com/tx/0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5",
             "createdAt": 1574408211000
         }
     ]
@@ -1323,6 +1327,7 @@ id | string | true | ID of the withdraw to retrieve.
             "symbol": "JOY",
             "depositAmount": "1.000000000000000000",
             "withdrawAmount": null,
+            "explorerUrl": "https://testnet.gojoychain.com/tx/0x562078adb2412f675fd63a944cf78b64b91084e83ff0052a1f66d107bde17ce5",
             "createdAt": 1574408118000
         },
         {
@@ -1333,6 +1338,7 @@ id | string | true | ID of the withdraw to retrieve.
             "symbol": "JOY",
             "depositAmount": null,
             "withdrawAmount": "2.000000000000000000",
+            "explorerUrl": "https://testnet.gojoychain.com/tx/0xb272d68dd05c0ef8f73aecb9eef1c0ee71ed2b6261ccc869d82ed7bdf60fd2e5",
             "createdAt": 1574408211000
         }
     ]
