@@ -917,6 +917,44 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 id | string | true | ID of the balance to retrieve.
 
+## Update A Balance
+
+> 200 Response:
+
+```json
+{
+    "data": {
+        "message": "Balanced added"
+    }
+}
+{
+    "data": {
+        "message": "Balanced subtracted"
+    }
+}
+```
+
+This endpoint adds to or subtracts from a Balance.
+
+### HTTP Request
+
+`PUT /balance`
+
+### Headers
+
+Header | Required | Description
+------ | -------- | -----------
+Authorization | true | Requires API Key with scope `balance.update`.
+
+### Body Parameters (JSON)
+
+Parameter | Type | Required | Description
+--------- | ---- | -------- | -----------
+address | string | true | Wallet address.
+symbol | string | true | Token symbol. Only `JOY` is supported currently.
+balance_add | string | true | Amount to add in decimal format. e.g. 1 JOY = "1".
+balance_sub | string | true | Amount to subtract in decimal format. e.g. 1 JOY = "1".
+
 # Locked Balance
 
 ## Get All Locked Balances
@@ -1315,7 +1353,7 @@ address | string | false | Filters deposit's to_address and withdraw's from_addr
 
 # Action
 
-## Withdraw JOY
+## Withdraw Tokens
 
 > 200 Response:
 
@@ -1327,11 +1365,11 @@ address | string | false | Filters deposit's to_address and withdraw's from_addr
 }
 ```
 
-This endpoint withdraws JOY from the admin account and deducts the `value` from the `from` address.
+This endpoint withdraws tokens from the admin account and deducts the `value` from the `from` address. `Reseller` accounts cannot withdraw.
 
 ### HTTP Request
 
-`POST /withdraw-joy`
+`POST /action/withdraw`
 
 ### Body Parameters (JSON)
 
@@ -1340,6 +1378,7 @@ Parameter | Type | Required | Description
 from | string | true | Address to deduct the JOY from.
 to | string | true | Address to send the JOY to.
 value | string | true | Amount to withdraw. Should be decimal format, e.g. 1 JOY = "1".
+token | string | true | Token to withdraw. Only `JOY` is supported currently.
 access_pin | string | true | 6-digit code. Required if user has Access Pin set.
 sms_code | string | true | 6-digit code. Required if authenticating with SMS.
 google_code | string | true | 6-digit code. Required if authenticating with Google Auth.
