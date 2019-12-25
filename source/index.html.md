@@ -107,7 +107,8 @@ This endpoint returns user info.
         },
         "kyc": {
             "name": "KYC (ID Verification)",
-            "enabled": false
+            "enabled": false,
+            "pending": true
         }
     }
 }
