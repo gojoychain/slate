@@ -1623,6 +1623,12 @@
 <td>Token symbol. Only <code>JOY</code> is supported currently.</td>
 </tr>
 <tr>
+<td>wallet_type</td>
+<td>string</td>
+<td>true</td>
+<td>One of: <code>[personal, business]</code>.</td>
+</tr>
+<tr>
 <td>balance_add</td>
 <td>string</td>
 <td>true</td>
@@ -1777,6 +1783,12 @@
 <td>string</td>
 <td>true</td>
 <td>Token symbol.</td>
+</tr>
+<tr>
+<td>wallet_type</td>
+<td>string</td>
+<td>true</td>
+<td>One of: <code>[personal, business]</code>.</td>
 </tr>
 <tr>
 <td>amount</td>
@@ -2203,7 +2215,7 @@
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint withdraws tokens from the admin account and deducts the <code>value</code> from the <code>from</code> address. <code>Reseller</code> accounts cannot withdraw.</p>
+<p>This endpoint withdraws tokens from the admin account and deducts the <code>value</code> from the <code>from</code> address. <code>Business</code> wallets cannot withdraw.</p>
 <h3 id='http-request-38'>HTTP Request</h3>
 <p><code>POST /action/withdraw</code></p>
 <h3 id='body-parameters-json-12'>Body Parameters (JSON)</h3>
@@ -2238,6 +2250,12 @@
 <td>string</td>
 <td>true</td>
 <td>Token to withdraw. Only <code>JOY</code> is supported currently.</td>
+</tr>
+<tr>
+<td>wallet_type</td>
+<td>string</td>
+<td>true</td>
+<td>One of: <code>[personal, business]</code>.</td>
 </tr>
 <tr>
 <td>access_pin</td>
