@@ -955,6 +955,7 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 address | string | true | Wallet address.
 symbol | string | true | Token symbol. Only `JOY` is supported currently.
+wallet_type | string | true | One of: `[personal, business]`.
 balance_add | string | true | Amount to add in decimal format. e.g. 1 JOY = "1".
 balance_sub | string | true | Amount to subtract in decimal format. e.g. 1 JOY = "1".
 
@@ -1060,6 +1061,7 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 address | string | true | Wallet address (starts with 0x).
 symbol | string | true | Token symbol.
+wallet_type | string | true | One of: `[personal, business]`.
 amount | string | true | Amount to lock up (in decimal format).
 expires_at | number | true | Date of expiration for the locked up amount (in UNIX milliseconds).
 
@@ -1374,7 +1376,7 @@ address | string | false | Filters deposit's to_address and withdraw's from_addr
 }
 ```
 
-This endpoint withdraws tokens from the admin account and deducts the `value` from the `from` address. `Reseller` accounts cannot withdraw.
+This endpoint withdraws tokens from the admin account and deducts the `value` from the `from` address. `Business` wallets cannot withdraw.
 
 ### HTTP Request
 
@@ -1388,6 +1390,7 @@ from | string | true | Address to deduct the JOY from.
 to | string | true | Address to send the JOY to.
 value | string | true | Amount to withdraw. Should be decimal format, e.g. 1 JOY = "1".
 token | string | true | Token to withdraw. Only `JOY` is supported currently.
+wallet_type | string | true | One of: `[personal, business]`.
 access_pin | string | true | 6-digit code. Required if user has Access Pin set.
 sms_code | string | true | 6-digit code. Required if authenticating with SMS.
 google_code | string | true | 6-digit code. Required if authenticating with Google Auth.
