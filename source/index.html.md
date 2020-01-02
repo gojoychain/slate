@@ -422,9 +422,25 @@ This endpoint accepts a `multipart/form-data` upload for the KYC image of proof 
 
 ```json
 {
-    "data": {
-        "message": "KYCDocument 1 updated"
-    }
+    "data": [
+        {
+            "id": "1",
+            "docType": "National ID",
+            "idNumber": "1",
+            "nationality": "USA",
+            "birthCountry": "Canada",
+            "birthCity": "Ontario",
+            "birthDate": "1984-09-25",
+            "residenceCountry": "USA",
+            "residenceProvince": "",
+            "residenceCity": "San Mateo",
+            "residenceAddress": "123 Some Street",
+            "residenceZip": "98765",
+            "status": 0,
+            "createdAt": 1576691681000,
+            "updatedAt": 1576691681000
+        }
+    ]
 }
 ```
 
@@ -462,9 +478,25 @@ residence_zip | string | false | Residence zip of user.
 
 ```json
 {
-    "data": {
-        "message": "KYCDocument 1 approved"
-    }
+    "data": [
+        {
+            "id": "1",
+            "docType": "National ID",
+            "idNumber": "1",
+            "nationality": "USA",
+            "birthCountry": "Canada",
+            "birthCity": "Ontario",
+            "birthDate": "1984-09-25",
+            "residenceCountry": "USA",
+            "residenceProvince": "",
+            "residenceCity": "San Mateo",
+            "residenceAddress": "123 Some Street",
+            "residenceZip": "98765",
+            "status": 1,
+            "createdAt": 1576691681000,
+            "updatedAt": 1576691681000
+        }
+    ]
 }
 ```
 
