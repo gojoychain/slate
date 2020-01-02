@@ -423,12 +423,7 @@ This endpoint accepts a `multipart/form-data` upload for the KYC image of proof 
 ```json
 {
     "data": {
-        "id": "1",
-        "email": "deric@bodhi.network",
-        "encodedKey": "abcdefghijklmnopqrstuvwxyz01234567890",
-        "scope": "balance.update, locked_balance.create",
-        "status": 1,
-        "createdAt": 1577971246000
+        "message": "KYCDocument 1 updated"
     }
 }
 ```
@@ -531,12 +526,12 @@ email | string | true | Email address.
 ```json
 {
     "data": {
-        "message": "Scope added: example_scope.create"
-    }
-}
-{
-    "data": {
-        "message": "Scope removed: example_scope.create"
+        "id": "1",
+        "email": "deric@bodhi.network",
+        "encodedKey": "abcdefghijklmnopqrstuvwxyz01234567890",
+        "scope": "balance.update, locked_balance.create",
+        "status": 1,
+        "createdAt": 1577971246000
     }
 }
 ```
