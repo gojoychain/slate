@@ -423,7 +423,12 @@ This endpoint accepts a `multipart/form-data` upload for the KYC image of proof 
 ```json
 {
     "data": {
-        "message": "KYCDocument 1 updated"
+        "id": "1",
+        "email": "deric@bodhi.network",
+        "encodedKey": "abcdefghijklmnopqrstuvwxyz01234567890",
+        "scope": "balance.update, locked_balance.create",
+        "status": 1,
+        "createdAt": 1577971246000
     }
 }
 ```
