@@ -837,6 +837,7 @@ id | string | true | ID of the wallet to retrieve.
             "id": "1",
             "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
+            "balanceType": "personal",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
@@ -851,16 +852,17 @@ id | string | true | ID of the wallet to retrieve.
         {
             "id": "2",
             "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-            "symbol": "JUSD",
+            "symbol": "JOY",
+            "balanceType": "business",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
             "createdAt": 1574308826000,
-            "assetId": 2,
-            "assetName": "JUSD",
+            "assetId": 1,
+            "assetName": "JOY Token",
             "assetDecimals": 18,
-            "assetContractAddress": "0x28d7fEecd1aB9Dae7d83cbB986f2A2Ecb127183d",
-            "assetUsdPrice": "0.000",
+            "assetContractAddress": "0x0000000000000000000000000000000000000000",
+            "assetUsdPrice": "0.500",
             "assetIconUrl": ""
         },
         {...}
@@ -881,6 +883,7 @@ Parameter | Type | Required | Description
 id | string | false | Filter by ID.
 address | string | false | Filter by address (starts with 0x).
 symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
+balance_type | string | false | Filter by balance type (wallet type). One of: `[personal, business]`.
 
 ## Get A Specific Balance
 
@@ -893,6 +896,7 @@ symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
             "id": "1",
             "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
+            "balanceType": "personal",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
@@ -973,6 +977,7 @@ balance_sub | string | true | Amount to subtract in decimal format. e.g. 1 JOY =
             "balanceID": "1",
             "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
             "symbol": "JOY",
+            "balanceType": "personal",
             "amount": "2.000000000000000000",
             "processed": 1,
             "expiresAt": 1575529620000,
@@ -997,6 +1002,7 @@ id | string | false | Filter by ID.
 balance_id | string | false | Filter by Balance ID.
 address | string | false | Filter by address (starts with 0x).
 symbol | string | false | Filter by symbol.
+balance_type | string | false | Filter by balance type (wallet type). One of: `[personal, business]`.
 
 ## Get A Specific Locked Balance
 
@@ -1010,6 +1016,7 @@ symbol | string | false | Filter by symbol.
             "balanceID": "1",
             "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
             "symbol": "JOY",
+            "balanceType": "personal",
             "amount": "2.000000000000000000",
             "processed": 1,
             "expiresAt": 1575529620000,
