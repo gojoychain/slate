@@ -935,12 +935,20 @@ id | string | true | ID of the balance to retrieve.
 ```json
 {
     "data": {
-        "message": "Balanced added"
-    }
-}
-{
-    "data": {
-        "message": "Balanced subtracted"
+        "id": "1",
+        "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+        "symbol": "JOY",
+        "balanceType": "personal",
+        "amount": "5.000000000000000000",
+        "lockedAmount": "0.000000000000000000",
+        "stakedAmount": "0.000000000000000000",
+        "createdAt": 1577457373000,
+        "assetId": null,
+        "assetName": null,
+        "assetDecimals": null,
+        "assetContractAddress": null,
+        "assetUsdPrice": null,
+        "assetIconUrl": null
     }
 }
 ```
