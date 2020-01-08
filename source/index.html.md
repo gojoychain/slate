@@ -53,8 +53,7 @@ Some APIs require an `Admin API Key` header in the form of `Authorization: $ADMI
 ```json
 {
     "data": {
-        "id": 1001483220,
-        "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"
+        "message": "Success"
     }
 }
 ```
@@ -79,7 +78,12 @@ code | string | true | Code supplied by Passport API.
 {
     "data": {
         "id": 1001483220,
-        "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15"
+        "personal": {
+            "address": "0x4e90a36b45879f5bae71b57ad525e817afa54890"
+        },
+        "business": {
+            "address": "0x1e7b3a773a9e2bb9a99065770ac1ff6a33f5d64a"
+        }
     }
 }
 ```
@@ -795,8 +799,15 @@ id | string | true | ID of the user to retrieve.
 {
     "data": [
         {
-            "id": "1000000000",
-            "address": "0x0000000000000000000000000000000000000000",
+            "userId": "1000000000",
+            "address": "0x4e90a36b45879f5bae71b57ad525e817afa54890",
+            "walletType": "personal",
+            "createdAt": 1574316887000
+        },
+        {
+            "userId": "1000000000",
+            "address": "0x1e7b3a773a9e2bb9a99065770ac1ff6a33f5d64a",
+            "walletType": "business",
             "createdAt": 1574316887000
         },
         {...}
@@ -814,9 +825,11 @@ This endpoint retrieves all wallets.
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
+user_id | string | false | Filter by User ID.
 address | string | false | Filter by address (starts with 0x).
+wallet_type | string | false | Filter by wallet type. One of: `[personal, business]`.
 
-## Get A Specific Wallet
+## Get All Wallets For User
 
 > 200 Response:
 
@@ -824,25 +837,32 @@ address | string | false | Filter by address (starts with 0x).
 {
     "data": [
         {
-            "id": "1000000000",
-            "address": "0x0000000000000000000000000000000000000000",
+            "userId": "1000000000",
+            "address": "0x4e90a36b45879f5bae71b57ad525e817afa54890",
+            "walletType": "personal",
+            "createdAt": 1574316887000
+        },
+        {
+            "userId": "1000000000",
+            "address": "0x1e7b3a773a9e2bb9a99065770ac1ff6a33f5d64a",
+            "walletType": "business",
             "createdAt": 1574316887000
         }
     ]
 }
 ```
 
-This endpoint retrieves a specific wallet.
+This endpoint retrieves all the wallets for a specific user.
 
 ### HTTP Request
 
-`GET /wallet/:id`
+`GET /wallet/:userid`
 
 ### URL Parameters
 
 Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
-id | string | true | ID of the wallet to retrieve.
+userid | string | true | User ID of the Wallets to retrieve.
 
 # Balance
 
@@ -857,7 +877,6 @@ id | string | true | ID of the wallet to retrieve.
             "id": "1",
             "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
-            "balanceType": "personal",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
@@ -873,7 +892,6 @@ id | string | true | ID of the wallet to retrieve.
             "id": "2",
             "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
-            "balanceType": "business",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
@@ -903,7 +921,6 @@ Parameter | Type | Required | Description
 id | string | false | Filter by ID.
 address | string | false | Filter by address (starts with 0x).
 symbol | string | false | Filter by symbol. One of: [`JOY`, `JUSD`].
-balance_type | string | false | Filter by balance type (wallet type). One of: `[personal, business]`.
 
 ## Get A Specific Balance
 
@@ -916,7 +933,6 @@ balance_type | string | false | Filter by balance type (wallet type). One of: `[
             "id": "1",
             "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
             "symbol": "JOY",
-            "balanceType": "personal",
             "amount": "0.000000000000000000",
             "lockedAmount": "0.000000000000000000",
             "stakedAmount": "0.000000000000000000",
@@ -954,7 +970,6 @@ id | string | true | ID of the balance to retrieve.
         "id": "1",
         "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
         "symbol": "JOY",
-        "balanceType": "personal",
         "amount": "5.000000000000000000",
         "lockedAmount": "0.000000000000000000",
         "stakedAmount": "0.000000000000000000",
@@ -987,7 +1002,6 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 address | string | true | Wallet address.
 symbol | string | true | Token symbol. Only `JOY` is supported currently.
-wallet_type | string | true | One of: `[personal, business]`.
 balance_add | string | true | Amount to add in decimal format. e.g. 1 JOY = "1".
 balance_sub | string | true | Amount to subtract in decimal format. e.g. 1 JOY = "1".
 
@@ -1005,7 +1019,6 @@ balance_sub | string | true | Amount to subtract in decimal format. e.g. 1 JOY =
             "balanceID": "1",
             "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
             "symbol": "JOY",
-            "balanceType": "personal",
             "amount": "2.000000000000000000",
             "processed": 1,
             "expiresAt": 1575529620000,
@@ -1030,7 +1043,6 @@ id | string | false | Filter by ID.
 balance_id | string | false | Filter by Balance ID.
 address | string | false | Filter by address (starts with 0x).
 symbol | string | false | Filter by symbol.
-balance_type | string | false | Filter by balance type (wallet type). One of: `[personal, business]`.
 
 ## Get A Specific Locked Balance
 
@@ -1044,7 +1056,6 @@ balance_type | string | false | Filter by balance type (wallet type). One of: `[
             "balanceID": "1",
             "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
             "symbol": "JOY",
-            "balanceType": "personal",
             "amount": "2.000000000000000000",
             "processed": 1,
             "expiresAt": 1575529620000,
@@ -1096,7 +1107,6 @@ Parameter | Type | Required | Description
 --------- | ---- | -------- | -----------
 address | string | true | Wallet address (starts with 0x).
 symbol | string | true | Token symbol.
-wallet_type | string | true | One of: `[personal, business]`.
 amount | string | true | Amount to lock up (in decimal format).
 expires_at | number | true | Date of expiration for the locked up amount (in UNIX milliseconds).
 
@@ -1425,7 +1435,6 @@ from | string | true | Address to deduct the JOY from.
 to | string | true | Address to send the JOY to.
 value | string | true | Amount to withdraw. Should be decimal format, e.g. 1 JOY = "1".
 token | string | true | Token to withdraw. Only `JOY` is supported currently.
-wallet_type | string | true | One of: `[personal, business]`.
 access_pin | string | true | 6-digit code. Required if user has Access Pin set.
 sms_code | string | true | 6-digit code. Required if authenticating with SMS.
 google_code | string | true | 6-digit code. Required if authenticating with Google Auth.
