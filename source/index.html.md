@@ -641,56 +641,14 @@ google_code | string | true | 6-digit code. Required if authenticating with Goog
 {
     "data": [
         {
-            "balance": [
-                {
-                    "id": "1",
-                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-                    "symbol": "JOY",
-                    "balanceType": "personal",
-                    "amount": "0.000000000000000000",
-                    "lockedAmount": "0.000000000000000000",
-                    "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574308826000,
-                    "assetId": 1,
-                    "assetName": "JOY Token",
-                    "assetDecimals": 18,
-                    "assetContractAddress": "0x0000000000000000000000000000000000000000",
-                    "assetUsdPrice": "0.500",
-                    "assetIconUrl": ""
-                },
-                {
-                    "id": "2",
-                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-                    "symbol": "JOY",
-                    "balanceType": "business",
-                    "amount": "0.000000000000000000",
-                    "lockedAmount": "0.000000000000000000",
-                    "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574308826000,
-                    "assetId": 1,
-                    "assetName": "JOY Token",
-                    "assetDecimals": 18,
-                    "assetContractAddress": "0x0000000000000000000000000000000000000000",
-                    "assetUsdPrice": "0.500",
-                    "assetIconUrl": ""
-                }
-            ],
-            "user": {
-                "id": "1001483220",
-                "openID": "abcdefghijklmnopqrstuvwxyz=",
-                "acctType": "personal",
-                "firstName": "Deric",
-                "lastName": "Walintukan",
-                "email": "deric@bodhi.network",
-                "mobile": "1234567890",
-                "status": 1,
-                "createdAt": 1574308826000
-            },
-            "wallet": {
-                "id": "1001483220",
-                "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-                "createdAt": 1574308826000
-            }
+            "id": "1001483220",
+            "openID": "abcdefghijklmnopqrstuvwxyz=",
+            "firstName": "Deric",
+            "lastName": "Walintukan",
+            "email": "deric@bodhi.network",
+            "mobile": "1234567890",
+            "status": 1,
+            "createdAt": 1574308826000
         },
         {...}
     ]
@@ -722,56 +680,14 @@ mobile | string | false | Filter by mobile number.
 {
     "data": [
         {
-            "balance": [
-                {
-                    "id": "1",
-                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-                    "symbol": "JOY",
-                    "balanceType": "personal",
-                    "amount": "0.000000000000000000",
-                    "lockedAmount": "0.000000000000000000",
-                    "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574308826000,
-                    "assetId": 1,
-                    "assetName": "JOY Token",
-                    "assetDecimals": 18,
-                    "assetContractAddress": "0x0000000000000000000000000000000000000000",
-                    "assetUsdPrice": "0.500",
-                    "assetIconUrl": ""
-                },
-                {
-                    "id": "2",
-                    "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-                    "symbol": "JOY",
-                    "balanceType": "business",
-                    "amount": "0.000000000000000000",
-                    "lockedAmount": "0.000000000000000000",
-                    "stakedAmount": "0.000000000000000000",
-                    "createdAt": 1574308826000,
-                    "assetId": 1,
-                    "assetName": "JOY Token",
-                    "assetDecimals": 18,
-                    "assetContractAddress": "0x0000000000000000000000000000000000000000",
-                    "assetUsdPrice": "0.500",
-                    "assetIconUrl": ""
-                }
-            ],
-            "user": {
-                "id": "1001483220",
-                "openID": "abcdefghijklmnopqrstuvwxyz=",
-                "acctType": "personal",
-                "firstName": "Deric",
-                "lastName": "Walintukan",
-                "email": "deric@bodhi.network",
-                "mobile": "1234567890",
-                "status": 1,
-                "createdAt": 1574308826000
-            },
-            "wallet": {
-                "id": "1001483220",
-                "address": "0xa31f8ddda5b55f13e5c3d2019144ceb5553ffc15",
-                "createdAt": 1574308826000
-            }
+            "id": "1001483220",
+            "openID": "abcdefghijklmnopqrstuvwxyz=",
+            "firstName": "Deric",
+            "lastName": "Walintukan",
+            "email": "deric@bodhi.network",
+            "mobile": "1234567890",
+            "status": 1,
+            "createdAt": 1574308826000
         }
     ]
 }
