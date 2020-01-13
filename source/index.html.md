@@ -315,7 +315,21 @@ id | string | true | User ID.
 ```json
 {
     "data": {
-        "message": "KYCDocument 1 added"
+        "id": "1",
+        "docType": "National ID",
+        "idNumber": "1",
+        "nationality": "USA",
+        "birthCountry": "Canada",
+        "birthCity": "Ontario",
+        "birthDate": "1984-09-25",
+        "residenceCountry": "USA",
+        "residenceProvince": "",
+        "residenceCity": "San Mateo",
+        "residenceAddress": "123 Some Street",
+        "residenceZip": "98765",
+        "status": 0,
+        "createdAt": 1578920178000,
+        "updatedAt": 1578920178000
     }
 }
 ```
@@ -999,9 +1013,18 @@ id | string | true | ID of the locked balance to retrieve.
 
 ```json
 {
-    "data": {
-        "message": "LockedBalance 1 added"
-    }
+    "data": [
+        {
+            "id": "1",
+            "balanceID": "1",
+            "address": "0xabdc40732ef28a597a5431adc3e8d11f15f3609e",
+            "symbol": "JOY",
+            "amount": "2.000000000000000000",
+            "processed": 0,
+            "expiresAt": 1575559999000,
+            "createdAt": 1575557999000
+        }
+    ]
 }
 ```
 
@@ -1042,7 +1065,7 @@ expires_at | number | true | Date of expiration for the locked up amount (in UNI
             "decimals": 18,
             "contractAddress": "0x0000000000000000000000000000000000000000",
             "usdPrice": "0.500",
-            "iconUrl": "",
+            "iconUrl": "https://test.com/icon.png",
             "createdAt": 1574666442000
         },
         {...}
@@ -1078,7 +1101,7 @@ decimals | string | false | Filter by decimals.
             "decimals": 18,
             "contractAddress": "0x0000000000000000000000000000000000000000",
             "usdPrice": "0.500",
-            "iconUrl": "",
+            "iconUrl": "https://test.com/icon.png",
             "createdAt": 1574666442000
         }
     ]
@@ -1103,9 +1126,18 @@ id | string | true | ID of the asset to retrieve.
 
 ```json
 {
-    "data": {
-        "message": "Asset 1 added"
-    }
+    "data": [
+        {
+            "id": 1,
+            "name": "JOY Token",
+            "symbol": "JOY",
+            "decimals": 18,
+            "contractAddress": "0x0000000000000000000000000000000000000000",
+            "usdPrice": "0.500",
+            "iconUrl": "https://test.com/icon.png",
+            "createdAt": 1574666442000
+        }
+    ]
 }
 ```
 
